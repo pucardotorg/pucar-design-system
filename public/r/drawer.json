@@ -7,7 +7,7 @@
     "vaul"
   ],
   "registryDependencies": [
-    "https://pucar.example/ui/r/pucar-theme.json"
+    "https://pucar-ui.vercel.app/r/pucar-theme.json"
   ],
   "files": [
     {

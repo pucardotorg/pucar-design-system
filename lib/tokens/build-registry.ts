@@ -42,7 +42,7 @@ type Vars = Record<string, string>
 // Set this to the real deployed URL (e.g. the Vercel domain) and re-run
 // `pnpm tokens` before publishing. Internal registryDependencies are built
 // from it, so a wrong value here breaks cross-item installs.
-const HOMEPAGE = "https://pucar.example/ui"
+const HOMEPAGE = "https://pucar-ui.vercel.app"
 const own = (name: string) => `${HOMEPAGE}/r/${name}.json`
 
 // ── Version stamp — refuse to build without a release note ──────

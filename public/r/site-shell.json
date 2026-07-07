@@ -4,9 +4,9 @@
   "title": "App shell",
   "description": "Pucar app frame — sidebar (grouped nav + user block) + top bar. Blocks (case-dashboard, new-case-form) are designed to render inside this shell — add it first and wrap your pages with it (plus the theme provider).",
   "registryDependencies": [
-    "https://pucar.example/ui/r/pucar-theme.json",
-    "https://pucar.example/ui/r/button.json",
-    "https://pucar.example/ui/r/avatar.json"
+    "https://pucar-ui.vercel.app/r/pucar-theme.json",
+    "https://pucar-ui.vercel.app/r/button.json",
+    "https://pucar-ui.vercel.app/r/avatar.json"
   ],
   "files": [
     {

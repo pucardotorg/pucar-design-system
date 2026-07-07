@@ -4,12 +4,12 @@
   "title": "Case dashboard",
   "description": "ON Court dashboard — stat cards, filings chart, share-of-docket, today's hearings. Expects to render inside site-shell.",
   "registryDependencies": [
-    "https://pucar.example/ui/r/pucar-theme.json",
-    "https://pucar.example/ui/r/status-pill.json",
-    "https://pucar.example/ui/r/card.json",
-    "https://pucar.example/ui/r/table.json",
-    "https://pucar.example/ui/r/chart.json",
-    "https://pucar.example/ui/r/button.json"
+    "https://pucar-ui.vercel.app/r/pucar-theme.json",
+    "https://pucar-ui.vercel.app/r/status-pill.json",
+    "https://pucar-ui.vercel.app/r/card.json",
+    "https://pucar-ui.vercel.app/r/table.json",
+    "https://pucar-ui.vercel.app/r/chart.json",
+    "https://pucar-ui.vercel.app/r/button.json"
   ],
   "files": [
     {

@@ -4,7 +4,7 @@
   "title": "Pucar theme",
   "description": "Pucar · ON Court design tokens — colour, type, spacing, radius, elevation (light + dark, WCAG 2.2 AA). Ships the full @theme utility mappings (status colours, surfaces, type scale, shadows), so custom utilities work in consumer apps. Pulls in design-rules (guidelines + screen-craft) so the rules travel with the tokens. Release 2026-07-06.",
   "registryDependencies": [
-    "https://pucar.example/ui/r/design-rules.json"
+    "https://pucar-ui.vercel.app/r/design-rules.json"
   ],
   "cssVars": {
     "theme": {

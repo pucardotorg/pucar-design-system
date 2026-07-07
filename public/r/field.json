@@ -7,9 +7,9 @@
     "class-variance-authority"
   ],
   "registryDependencies": [
-    "https://pucar.example/ui/r/pucar-theme.json",
-    "https://pucar.example/ui/r/label.json",
-    "https://pucar.example/ui/r/separator.json"
+    "https://pucar-ui.vercel.app/r/pucar-theme.json",
+    "https://pucar-ui.vercel.app/r/label.json",
+    "https://pucar-ui.vercel.app/r/separator.json"
   ],
   "files": [
     {

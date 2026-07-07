@@ -4,7 +4,7 @@
   "title": "Status pill",
   "description": "Rounded-full status chip (AA-safe, sentence case).",
   "registryDependencies": [
-    "https://pucar.example/ui/r/pucar-theme.json"
+    "https://pucar-ui.vercel.app/r/pucar-theme.json"
   ],
   "files": [
     {
