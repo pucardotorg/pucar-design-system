@@ -2,6 +2,8 @@
 
 import { Collapsible as CollapsiblePrimitive } from "radix-ui"
 
+// Progressive disclosure of rare/advanced options — hidden, never deleted.
+// Nothing REQUIRED goes behind one; critical info never lives only here.
 function Collapsible({
   ...props
 }: React.ComponentProps<typeof CollapsiblePrimitive.Root>) {

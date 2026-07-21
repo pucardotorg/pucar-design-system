@@ -6,6 +6,9 @@ import { AlertDialog as AlertDialogPrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
+// Destructive/irreversible confirms ONLY. Name the object and the consequence
+// ("Withdraw the complaint against X? This can't be undone") — never a bare
+// "Are you sure?". Confirm = destructive-solid; cancel is the safe default.
 function AlertDialog({
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Root>) {

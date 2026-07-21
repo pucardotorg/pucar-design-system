@@ -6,6 +6,9 @@ import { Accordion as AccordionPrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 
+// One-at-a-time expandable help/FAQ content (citizen-facing). Never hide
+// critical filing information behind one — required info lives in the page.
+// Independent always-open sections want collapsible, not accordion.
 function Accordion({
   className,
   ...props

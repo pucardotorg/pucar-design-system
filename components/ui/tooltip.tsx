@@ -5,6 +5,9 @@ import { Tooltip as TooltipPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// Short text label for icon-only controls on hover/focus. Critical info
+// NEVER lives only in a tooltip (touch users won't see it); icon buttons
+// still need aria-label — the tooltip is a courtesy, not the name.
 function TooltipProvider({
   delayDuration = 0,
   ...props

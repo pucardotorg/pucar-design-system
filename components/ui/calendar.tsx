@@ -12,6 +12,9 @@ import { cn } from "@/lib/utils"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { ChevronLeftIcon, ChevronRightIcon, ChevronDownIcon } from "lucide-react"
 
+// Date choice where week context matters (hearings, adjournments). Known
+// dates users can type (DOB) want segmented text inputs instead (GOV.UK
+// memorable-dates pattern). Week start pinned to Sunday — deterministic SSR.
 function Calendar({
   className,
   classNames,

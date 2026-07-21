@@ -84,3 +84,10 @@ that triggered it. A fix without a transferable rule doesn't belong here; just f
   3. **Chosen state carries the brand tint** (`data-[state=on]` → `brand-muted` pair) — extends the selection ruling from location to choice. Grey is hover-only.
   4. **One ink per hue everywhere:** `*-muted-foreground` now aliases the hue's engineered ink, so chips, callouts and inline status text share one colour. Kills the 11-vs-12 chroma split (the tuned inks clear AA on the tints: warning 4.88, info 4.66).
 - **Status:** implemented; gate green at 35 pairs × 2 themes.
+
+## 2026-07-21 · The usage law + motion law (Track 2)
+- **Trigger:** Abhiram's critique acceptance — "when and how to use what" was undocumented (8 lines for 48 components; 4 of 48 files carried the mandated usage comment), and the system had no motion rules at all.
+- **Ruling:** a third law doc, **component-usage.md**, joins the working set (GOV.UK/USWDS/Carbon-grounded grammar: job · use when · don't use → instead · variant meanings, plus decision trees for actions, feedback, containers, overlays, navigation). Every `components/ui/*` file carries a distilled top-comment; the doc wins on conflict. **Motion law** added to design-guidelines: motion is feedback only, 100–150ms micro / 200–250ms surfaces, nothing over 300ms, ease-out in / ease-in out, and `prefers-reduced-motion` collapses everything globally via globals.css (WCAG 2.3.3 / C39) — enforced in CSS so no component can forget.
+- **Also:** the repo-hygiene working agreement's "working set" now includes component-usage.md and `.claude/skills/pucar-design/SKILL.md` (the portable agent skill); both ship in the `design-rules` registry item so consumers inherit the judgment, not just the components.
+- **Research base:** GOV.UK Design System (component-page grammar, disabled-button policy, button rationing), USWDS ("when to consider something else", links-vs-buttons, verb-first labels), Carbon (inline vs toast vs callout decision rules), Material 3 (motion duration/easing tokens).
+- **Status:** implemented

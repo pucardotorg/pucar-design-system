@@ -6,6 +6,9 @@ import { Select as SelectPrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { ChevronDownIcon, CheckIcon, ChevronUpIcon } from "lucide-react"
 
+// One choice from MORE than 5 options. 5 or fewer stay visible as
+// radio-group/toggle-group. One-of-many with search (party names, stations)
+// -> command-in-popover (combobox pattern).
 function Select({
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Root>) {

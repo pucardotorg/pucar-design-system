@@ -6,6 +6,9 @@ import { Checkbox as CheckboxPrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { CheckIcon } from "lucide-react"
 
+// Independent yes/no declarations, or many-of-N (>7 options: put checkboxes in
+// a scroll-area, echo chosen as chips). Mutually exclusive -> radio-group;
+// instant-effect setting -> switch.
 function Checkbox({
   className,
   ...props

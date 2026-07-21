@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { ChevronLeftIcon, ChevronRightIcon, MoreHorizontalIcon } from "lucide-react"
 
+// Page-through for long lists with the count visible ("Page 4 of 12").
+// No infinite scroll for records with legal weight — people cite positions.
 function Pagination({ className, ...props }: React.ComponentProps<"nav">) {
   return (
     <nav

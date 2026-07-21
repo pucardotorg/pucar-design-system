@@ -6,6 +6,9 @@ import { Menubar as MenubarPrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
+// Desktop application command surface (File/View/Help) for staff document
+// workspaces. Site navigation belongs to sidebar/navigation-menu. Citizens
+// never need a menubar.
 function Menubar({
   className,
   ...props

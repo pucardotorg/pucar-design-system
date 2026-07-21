@@ -5,6 +5,8 @@ import { NavigationMenu as NavigationMenuPrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { ChevronDownIcon } from "lucide-react"
 
+// Top-level navigation for public/citizen surfaces WITHOUT the workspace
+// sidebar. Never alongside the sidebar — two navigations disorient.
 function NavigationMenu({
   className,
   children,

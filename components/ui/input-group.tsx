@@ -8,6 +8,8 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 
+// A field with meaningful affixes: search icon, currency prefix, unit suffix,
+// inline copy button. If the affix carries no meaning, use plain input.
 function InputGroup({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div

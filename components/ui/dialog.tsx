@@ -7,6 +7,9 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { XIcon } from "lucide-react"
 
+// One focused decision or a tiny form (<=4 fields), blocking the page.
+// Multi-section or legally-weighty content -> full page (filings are pages,
+// not popups). Destructive confirm -> alert-dialog. Never dialog-from-dialog.
 function Dialog({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Root>) {

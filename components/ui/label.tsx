@@ -5,6 +5,8 @@ import { Label as LabelPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// The visible field label — always visible; placeholder-only fields fail
+// accessibility. Compose via field, which wires the aria for you.
 function Label({
   className,
   ...props

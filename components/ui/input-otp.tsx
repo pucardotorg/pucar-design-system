@@ -6,6 +6,8 @@ import { OTPInput, OTPInputContext } from "input-otp"
 import { cn } from "@/lib/utils"
 import { MinusIcon } from "lucide-react"
 
+// Fixed-length verification code (e-filing OTP): monospaced, grouped, 40px
+// targets. Not a styled general input.
 function InputOTP({
   className,
   containerClassName,

@@ -193,7 +193,7 @@ export default function ComponentsGallery() {
 
       <Section
         title="Buttons"
-        description="Variants, sizes, and states."
+        description="The emphasis ladder: exactly one teal primary per view; secondary/outline/ghost step down; status solids rationed to one, only when the action IS the status. Navigation between pages is a link, not a button. Disabled buttons are a last resort — prefer active + inline error."
       >
         <div className="space-y-4">
           <div className="flex flex-wrap items-center gap-3">
@@ -267,7 +267,7 @@ export default function ComponentsGallery() {
         </div>
       </Section>
 
-      <Section title="Form controls" description="Inputs and selection.">
+      <Section title="Form controls" description="Choose by count and effect: ≤5 visible options → radio/toggle group · >5 → select · independent declarations → checkbox · instant on/off → switch · exact numbers → input, never a slider. Labels always visible.">
         <div className="grid gap-6 sm:grid-cols-2">
           <div className="space-y-2">
             <Label htmlFor="email">Email</Label>
@@ -441,7 +441,7 @@ export default function ComponentsGallery() {
         </div>
       </Section>
 
-      <Section title="Data display" description="Table, avatars, progress, skeletons.">
+      <Section title="Data display" description="Tables are records × attributes for staff (one primary line per row, quiet headers); one record's facts want a description list. Skeletons mirror the final layout — a whole page never loads behind a bare spinner.">
         <div className="space-y-6">
           <Table>
             <TableHeader>
@@ -521,7 +521,7 @@ export default function ComponentsGallery() {
         </div>
       </Section>
 
-      <Section title="Feedback" description="Alerts, toasts, and pending states.">
+      <Section title="Feedback" description="Routing: one field's problem → inline field error · section-blocking → alert (persists until resolved) · background result → toast (auto-dismisses, so never things requiring action) · standing notice → banner region. Never a toast for a field error; never an alert for a success.">
         <div className="space-y-4">
           <Alert>
             <InfoIcon />
@@ -591,7 +591,7 @@ export default function ComponentsGallery() {
         </Empty>
       </Section>
 
-      <Section title="Overlays" description="Dialog, sheet, popover, dropdown, tooltip, hover card.">
+      <Section title="Overlays" description="One decision → dialog · destructive confirm → alert-dialog naming object + consequence · side context while the list stays visible → sheet · anchored actions → dropdown · icon labels → tooltip (critical info never lives only there). Multi-section or legal weight → a full page.">
         <div className="flex flex-wrap items-center gap-3">
           <Dialog>
             <DialogTrigger asChild>
@@ -695,7 +695,7 @@ export default function ComponentsGallery() {
         </div>
       </Section>
 
-      <Section title="Navigation" description="Tabs and pagination.">
+      <Section title="Navigation" description="Tabs switch parallel views of one object — sequential steps want a stepper, not tabs. Pagination keeps citable positions ('Page 4 of 12'); no infinite scroll for records with legal weight.">
         <div className="space-y-6">
           <Tabs defaultValue="overview">
             <TabsList>
@@ -741,7 +741,7 @@ export default function ComponentsGallery() {
         </div>
       </Section>
 
-      <Section title="Cards" description="Composed surfaces with actions.">
+      <Section title="Cards" description="A bounded region with one hairline, flat by default. Never nest cards — inner grouping is a sunken well on fill alone. Raised shadow only for genuine lift.">
         <div className="grid gap-4 sm:grid-cols-2">
           <Card>
             <CardHeader>

@@ -6,6 +6,9 @@ import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { CheckIcon, ChevronRightIcon } from "lucide-react"
 
+// Actions on the thing you clicked (row "..." menu, account menu). Choosing
+// form data -> select (form semantics). Destructive items: ink + tint
+// treatment, last, separated.
 function DropdownMenu({
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Root>) {

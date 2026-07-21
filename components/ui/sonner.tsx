@@ -4,6 +4,9 @@ import { useTheme } from "next-themes"
 import { Toaster as Sonner, type ToasterProps } from "sonner"
 import { CircleCheckIcon, InfoIcon, TriangleAlertIcon, OctagonXIcon, Loader2Icon } from "lucide-react"
 
+// Toasts: non-blocking confirmation of background/completed actions ("Draft
+// saved"). Auto-dismisses — so NEVER anything requiring action, never
+// validation errors, never things the user must not miss.
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = "system" } = useTheme()
 

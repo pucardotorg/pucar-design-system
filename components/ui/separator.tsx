@@ -5,6 +5,9 @@ import { Separator as SeparatorPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// A quiet hairline between meta items or blocks. If you need more than
+// dividers, the grouping wants a well or a card — prefer dividers over
+// density, but don't fake structure with them.
 function Separator({
   className,
   orientation = "horizontal",

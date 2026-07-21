@@ -4,6 +4,8 @@ import { Slot } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { ChevronRightIcon, MoreHorizontalIcon } from "lucide-react"
 
+// Ancestry trail on detail pages — one click up the hierarchy. Not for
+// top-level pages, and never as a step indicator (steps are ordered).
 function Breadcrumb({ className, ...props }: React.ComponentProps<"nav">) {
   return (
     <nav

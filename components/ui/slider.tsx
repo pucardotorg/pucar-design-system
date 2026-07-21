@@ -5,6 +5,9 @@ import { Slider as SliderPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// A value from a continuous range where relative position matters. When the
+// exact number matters (amounts, dates) -> input with inputMode=numeric;
+// sliders are hostile to precision.
 function Slider({
   className,
   defaultValue,

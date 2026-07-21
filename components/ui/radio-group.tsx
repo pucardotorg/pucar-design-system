@@ -5,6 +5,8 @@ import { RadioGroup as RadioGroupPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// Exactly one of 2-5 VISIBLE submitted options. >5 -> select. Instant effect
+// -> switch/toggle-group. Hiding 3 choices in a dropdown is pure friction.
 function RadioGroup({
   className,
   ...props

@@ -5,6 +5,8 @@ import { Switch as SwitchPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// Instant on/off setting — takes effect now, no submit. Inside a submitted
+// form the state is ambiguous until save -> checkbox.
 function Switch({
   className,
   size = "default",

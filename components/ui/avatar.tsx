@@ -5,6 +5,8 @@ import { Avatar as AvatarPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// A person — image or monogram (monogram tiles use the brand-muted pair).
+// Organisations/objects get an icon tile instead; never decorative.
 function Avatar({
   className,
   size = "default",

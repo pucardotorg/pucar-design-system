@@ -17,6 +17,9 @@ import {
 } from "@/components/ui/input-group"
 import { SearchIcon, CheckIcon } from "lucide-react"
 
+// The staff jump-to palette (Cmd-K): fuzzy search over cases/parties/actions.
+// Not a search-results page, and not for citizens — they get visible search
+// fields, not keyboard palettes.
 function Command({
   className,
   ...props

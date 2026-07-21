@@ -4,6 +4,9 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+// Records x attributes for trained staff. One primary line per row,
+// identifiers mono+muted, headers quiet (data reads first). Key-value facts
+// about ONE record -> description-list. Never for layout.
 function Table({ className, ...props }: React.ComponentProps<"table">) {
   return (
     <div

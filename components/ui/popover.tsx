@@ -5,6 +5,9 @@ import { Popover as PopoverPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// Small anchored surface with interactive content (filters, mini form).
+// Plain-text label -> tooltip. List of actions -> dropdown-menu. Anything the
+// user must complete -> dialog (popovers dismiss too easily).
 function Popover({
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Root>) {

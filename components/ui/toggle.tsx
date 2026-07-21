@@ -6,6 +6,9 @@ import { Toggle as TogglePrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// A pressed/unpressed UI state (formatting bar). The chosen state carries the
+// brand tint — grey is hover-only (grey selection reads as disabled).
+// Submitted form data -> checkbox/radio-group.
 const toggleVariants = cva(
   "group/toggle inline-flex items-center justify-center gap-1 rounded-lg text-body-compact font-medium whitespace-nowrap transition-all outline-none hover:bg-accent hover:text-foreground focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 aria-pressed:bg-brand-muted aria-pressed:text-brand-muted-foreground data-[state=on]:bg-brand-muted data-[state=on]:text-brand-muted-foreground dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
   {

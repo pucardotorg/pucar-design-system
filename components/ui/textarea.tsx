@@ -2,6 +2,8 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+// Multi-line free text (grounds, remarks). Grows with content; show a length
+// expectation when one exists.
 function Textarea({ className, ...props }: React.ComponentProps<"textarea">) {
   return (
     <textarea

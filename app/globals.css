@@ -414,6 +414,22 @@
   html {
     @apply font-sans;
   }
+
+  /* Motion law (design-guidelines §Motion): when the user asks for reduced
+     motion, every transition and animation collapses to an instant state
+     change — globally, so no component can forget. State changes themselves
+     still happen (near-zero duration, not `none`, keeps animation-end events
+     firing for JS that awaits them). WCAG 2.3.3 / technique C39. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
 }
 
 /* Scrutiny review — evidence-rect pulse when jumping to a flag from the summary */

@@ -5,6 +5,8 @@ import { ScrollArea as ScrollAreaPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// Bounded styled scroll for long option lists (acts invoked, multi-select).
+// Don't create gratuitous nested scroll — it's a trap on touch.
 function ScrollArea({
   className,
   children,

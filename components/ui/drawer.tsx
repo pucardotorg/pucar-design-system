@@ -5,6 +5,8 @@ import { Drawer as DrawerPrimitive } from "vaul"
 
 import { cn } from "@/lib/utils"
 
+// Touch bottom-sheet — the mobile counterpart to sheet/dialog for citizen
+// flows. On desktop use sheet instead.
 function Drawer({
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Root>) {

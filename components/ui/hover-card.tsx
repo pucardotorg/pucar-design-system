@@ -5,6 +5,8 @@ import { HoverCard as HoverCardPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// Rich preview of a linked entity on hover — desktop-only enhancement.
+// Never the sole path to anything; there is always a click-through.
 function HoverCard({
   ...props
 }: React.ComponentProps<typeof HoverCardPrimitive.Root>) {

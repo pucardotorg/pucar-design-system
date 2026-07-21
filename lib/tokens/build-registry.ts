@@ -222,12 +222,14 @@ const registry = {
     {
       name: "design-rules",
       type: "registry:item",
-      title: "Design rules (law + craft)",
+      title: "Design rules (law + craft + usage)",
       description:
-        `The two files that govern designing with Pucar: design-guidelines.md (the law — teal rationing, sentence case, AA, colour semantics) and screen-craft.md (the craft — spacing ladder, scaffolds, hierarchy, UX patterns, states, review pass). Installed into the consumer repo root so humans and AI sessions there inherit the rules. Release ${RELEASE}.`,
+        `The files that govern designing with Pucar: design-guidelines.md (the law — teal rationing, sentence case, AA, colour semantics, motion), screen-craft.md (the craft — spacing ladder, scaffolds, hierarchy, UX patterns, states, review pass), component-usage.md (when and how to use each component, with decision trees), and a portable agent skill (.claude/skills/pucar-design) so AI sessions in the consumer repo inherit the judgment automatically. Release ${RELEASE}.`,
       files: [
         { path: "design-guidelines.md", type: "registry:file", target: "design-guidelines.md" },
         { path: "screen-craft.md", type: "registry:file", target: "screen-craft.md" },
+        { path: "component-usage.md", type: "registry:file", target: "component-usage.md" },
+        { path: ".claude/skills/pucar-design/SKILL.md", type: "registry:file", target: ".claude/skills/pucar-design/SKILL.md" },
       ],
     },
     {

@@ -46,6 +46,12 @@ Calm, dignified **public service**. A courts product used by citizens under stre
 - One system radius (10px) and its derived scale. No loose values.
 - **Radius is assigned by role, not by eye** (ruling 2026-07-21): container (card, dialog, bordered region) → `xl` · control (button, field, track) → `lg` · inset item (menu row, list row, inner button) → `md`/`sm` · micro-control (checkbox) → derived `sm` · **chip → `full`, always**. Bare `rounded` (a fixed 4px that ignores the knob) is illegal. Siblings at the same anatomy level share one radius.
 
+### Motion
+- **Motion is feedback for something the user did — never ambient, never decorative.** A calm public instrument doesn't move on its own.
+- Two duration bands (Material 3's tokens, cut to our register): **micro feedback** (hover, focus, pressed) 100–150ms · **surface transitions** (overlays opening, sections expanding) 200–250ms. **Nothing over 300ms, ever.**
+- **Ease-out entering, ease-in exiting** (decelerate into view, accelerate out) — things arrive gently and leave quickly.
+- **`prefers-reduced-motion` collapses everything to instant state changes** — enforced globally in `globals.css` (`@media (prefers-reduced-motion: reduce)`), so no component can forget. State changes still happen; only the choreography disappears (WCAG 2.3.3).
+
 ### Control metrics
 - **Every field-like control defaults to 40px tall** — input, select, composed field (input-group), OTP slot, command input, tabs track. The size ladder is 32 / 36 / **40** / 44; smaller sizes are *opt-in* for staff-dense surfaces, never a primitive's default. Citizen-facing primary flows step up to 44 (`lg`).
 - **Container padding is one number: 24px** (`p-6`) — card, dialog, sheet, drawer, nested well. The `sm` card variant (staff-dense) uses 16. Nothing else.

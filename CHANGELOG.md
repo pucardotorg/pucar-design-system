@@ -4,6 +4,13 @@ All user-visible changes to the Pucar · ON Court design system. Newest first.
 
 ## 2026-07-21
 
+### Added (usage + motion law — Track 2, same day)
+- **component-usage.md** — the third law doc: when/how to use each of the 48 components (job · use when · don't use → instead · variant meanings) plus decision trees for actions, feedback, containers, overlays, and navigation. Grammar grounded in GOV.UK, USWDS, and Carbon.
+- **Usage comments on all 48 primitives** — every `components/ui/*` file now opens with its distilled rule (39 added; the rest already complied).
+- **Motion law** (design-guidelines §Motion) — feedback-only motion, 100–150ms micro / 200–250ms surfaces, ≤300ms always, ease-out in / ease-in out; `prefers-reduced-motion` collapses all animation globally in globals.css (WCAG 2.3.3).
+- **Portable agent skill** — `.claude/skills/pucar-design/SKILL.md`; ships with `design-rules` alongside component-usage.md, so consumer repos' AI sessions inherit the law automatically.
+- **Gallery captions** now carry the when/when-not rule for their section; `llms.txt` preamble points at the usage law.
+
 ### Changed (grey refinement II, same day)
 - **Command input**: transparent with bottom hairline (Spotlight pattern) — the `bg-input/30` grey slab is gone; focus tints the underline teal.
 - **Secondary button**: fill-only (border removed — that's outline's job) with a full-strength label (`secondary-foreground` → neutral-12). No longer confusable with disabled.

@@ -41,6 +41,8 @@ type SidebarContextProps = {
   toggleSidebar: () => void
 }
 
+// The workspace navigation rail (staff). Selection = brand tint, hover =
+// grey. Collapses to a sheet drawer below md — never simply vanishes.
 const SidebarContext = React.createContext<SidebarContextProps | null>(null)
 
 function useSidebar() {

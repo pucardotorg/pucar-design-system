@@ -6,6 +6,9 @@ import { Tabs as TabsPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// Parallel views of one object (Overview/Documents/Orders). Sequential steps
+// -> stepper pattern (tabs imply free order). >5 tabs means the object wants
+// a different layout.
 function Tabs({
   className,
   orientation = "horizontal",

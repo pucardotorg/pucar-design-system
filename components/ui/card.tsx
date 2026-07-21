@@ -2,6 +2,9 @@ import * as React from "react"
 
 import { cn } from "@/lib/utils"
 
+// A bounded page region — one hairline, flat. Never nest cards: inner grouping
+// is a surface-sunken well (fill, no border). shadow-raised only for genuine
+// lift. size="sm" (16px padding) only for staff-dense grids.
 function Card({
   className,
   size = "default",

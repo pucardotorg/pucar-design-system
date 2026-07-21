@@ -5,6 +5,8 @@ import { Progress as ProgressPrimitive } from "radix-ui"
 
 import { cn } from "@/lib/utils"
 
+// Determinate progress only (upload %, steps done). Indeterminate waits are
+// spinner (in context) or skeleton (regions). Not a chart.
 function Progress({
   className,
   value,

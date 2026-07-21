@@ -7,6 +7,8 @@ import { ToggleGroup as ToggleGroupPrimitive } from "radix-ui"
 import { cn } from "@/lib/utils"
 import { toggleVariants } from "@/components/ui/toggle"
 
+// One-of-N (or many-of-N) choice among <=5 options that stay visible
+// (density, view switch). >5 -> select. Selection carries the brand tint.
 const ToggleGroupContext = React.createContext<
   VariantProps<typeof toggleVariants> & {
     spacing?: number
