@@ -55,7 +55,7 @@ function DocRow({
         </span>
       </span>
       {flagCount > 0 && (
-        <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-destructive/10 px-1.5 py-0.5 text-[11px] font-semibold text-destructive">
+        <span className="inline-flex shrink-0 items-center gap-1 rounded-full bg-destructive-muted px-2 text-caption text-destructive-muted-foreground">
           <FlagIcon className="size-2.5" />
           {flagCount}
         </span>

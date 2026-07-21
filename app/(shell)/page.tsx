@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import Link from "next/link"
 import {
   BellIcon,
   CheckIcon,
@@ -143,36 +144,13 @@ import {
   DocumentSlotTitle,
 } from "@/components/ui/document-slot"
 
-function Section({
-  title,
-  description,
-  children,
-}: {
-  title: string
-  description?: string
-  children: React.ReactNode
-}) {
-  return (
-    <section className="space-y-4">
-      <div className="space-y-1">
-        <h2 className="font-heading text-lg font-semibold tracking-tight">
-          {title}
-        </h2>
-        {description ? (
-          <p className="text-sm text-muted-foreground">{description}</p>
-        ) : null}
-      </div>
-      <div className="rounded-xl border bg-card p-6 text-card-foreground">
-        {children}
-      </div>
-    </section>
-  )
-}
+import { GalleryExtra } from "./gallery-extra"
+import { Section } from "./gallery-section"
 
 const invoices = [
-  { id: "INV-001", client: "Acme Corp", status: "Paid", amount: "$1,200.00" },
-  { id: "INV-002", client: "Globex", status: "Pending", amount: "$800.00" },
-  { id: "INV-003", client: "Initech", status: "Overdue", amount: "$450.00" },
+  { id: "CF-2026-0141", client: "Ravi Menon", status: "Paid", amount: "₹4,340.00" },
+  { id: "CF-2026-0142", client: "Fathima Beevi", status: "Pending", amount: "₹2,180.00" },
+  { id: "CF-2026-0138", client: "Anil Thomas", status: "Overdue", amount: "₹1,760.00" },
 ]
 
 export default function ComponentsGallery() {
@@ -192,14 +170,17 @@ export default function ComponentsGallery() {
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
-        <div className="space-y-1">
-          <h1 className="font-heading text-3xl font-semibold tracking-tight">
-            Component gallery
-          </h1>
-          <p className="max-w-2xl text-sm text-muted-foreground">
+        <div className="space-y-1.5">
+          <h1 className="text-title-l">Component gallery</h1>
+          <p className="max-w-3xl text-body text-muted-foreground">
             The critique canvas. Every component renders against the current
-            tokens — as we tune color, type, space, and radius, this whole page
-            re-renders so you can react to the real thing.
+            tokens — as we tune colour, type, space, and radius, this whole page
+            re-renders so you can react to the real thing. Token values
+            themselves are measured on{" "}
+            <Link href="/foundations" className="text-primary underline-offset-4 hover:underline">
+              Foundations
+            </Link>
+            .
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -209,61 +190,6 @@ export default function ComponentsGallery() {
           <Badge variant="destructive">Draft</Badge>
         </div>
       </header>
-
-      <Section
-        title="Foundations — colour ramps"
-        description="Twelve functional steps per family. 1–2 backgrounds · 3–5 components · 6–8 borders · 9–10 solids (AA-tuned) · 11–12 text."
-      >
-        <div className="space-y-4">
-          {(["neutral", "brand", "success", "info", "warning", "destructive"] as const).map(
-            (fam) => (
-              <div key={fam}>
-                <div className="mb-1.5 text-xs font-medium capitalize text-muted-foreground">
-                  {fam}
-                </div>
-                <div className="flex gap-1">
-                  {Array.from({ length: 12 }, (_, i) => i + 1).map((n) => (
-                    <div key={n} className="flex-1">
-                      <div
-                        className="h-9 rounded-md ring-1 ring-inset ring-foreground/10"
-                        style={{ backgroundColor: `var(--${fam}-${n})` }}
-                      />
-                      <div className="mt-1 text-center text-[10px] tabular-nums text-muted-foreground">
-                        {n}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )
-          )}
-        </div>
-      </Section>
-
-      <Section
-        title="Solid actions — AA-tuned"
-        description="Every fill clears WCAG AA with its paired foreground (white in light, ink in dark)."
-      >
-        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          {(
-            [
-              ["Primary", "--primary", "--primary-foreground"],
-              ["Success", "--success", "--success-foreground"],
-              ["Info", "--info", "--info-foreground"],
-              ["Warning", "--warning", "--warning-foreground"],
-              ["Destructive", "--destructive", "--destructive-foreground"],
-            ] as const
-          ).map(([name, bg, fg]) => (
-            <div
-              key={name}
-              className="flex h-16 items-end rounded-lg p-3 text-sm font-medium"
-              style={{ backgroundColor: `var(${bg})`, color: `var(${fg})` }}
-            >
-              {name}
-            </div>
-          ))}
-        </div>
-      </Section>
 
       <Section
         title="Buttons"
@@ -520,25 +446,26 @@ export default function ComponentsGallery() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Invoice</TableHead>
-                <TableHead>Client</TableHead>
+                <TableHead>Receipt</TableHead>
+                <TableHead>Party</TableHead>
                 <TableHead>Status</TableHead>
-                <TableHead className="text-right">Amount</TableHead>
+                <TableHead className="text-right">Court fee</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {invoices.map((inv) => (
                 <TableRow key={inv.id}>
-                  <TableCell className="font-medium">{inv.id}</TableCell>
-                  <TableCell>{inv.client}</TableCell>
+                  <TableCell className="font-mono text-muted-foreground">{inv.id}</TableCell>
+                  <TableCell className="font-medium">{inv.client}</TableCell>
                   <TableCell>
+                    {/* Status means status: the chip's muted variants, never neutral greys */}
                     <Badge
                       variant={
                         inv.status === "Paid"
-                          ? "secondary"
+                          ? "success"
                           : inv.status === "Overdue"
                             ? "destructive"
-                            : "outline"
+                            : "warning"
                       }
                     >
                       {inv.status}
@@ -722,7 +649,7 @@ export default function ComponentsGallery() {
               </Button>
             </PopoverTrigger>
             <PopoverContent className="space-y-2">
-              <p className="text-sm font-medium">Quick search</p>
+              <p className="text-body-compact font-medium">Quick search</p>
               <Input placeholder="Type to search…" />
             </PopoverContent>
           </Popover>
@@ -761,7 +688,7 @@ export default function ComponentsGallery() {
             <HoverCardTrigger asChild>
               <Button variant="link">@pucar</Button>
             </HoverCardTrigger>
-            <HoverCardContent className="text-sm">
+            <HoverCardContent className="text-body-compact">
               The Pucar design system — built on shadcn + Radix.
             </HoverCardContent>
           </HoverCard>
@@ -776,13 +703,13 @@ export default function ComponentsGallery() {
               <TabsTrigger value="analytics">Analytics</TabsTrigger>
               <TabsTrigger value="reports">Reports</TabsTrigger>
             </TabsList>
-            <TabsContent value="overview" className="pt-4 text-sm text-muted-foreground">
+            <TabsContent value="overview" className="pt-4 text-body-compact text-muted-foreground">
               Overview content — a summary of everything at a glance.
             </TabsContent>
-            <TabsContent value="analytics" className="pt-4 text-sm text-muted-foreground">
+            <TabsContent value="analytics" className="pt-4 text-body-compact text-muted-foreground">
               Analytics content — charts and trends live here.
             </TabsContent>
-            <TabsContent value="reports" className="pt-4 text-sm text-muted-foreground">
+            <TabsContent value="reports" className="pt-4 text-body-compact text-muted-foreground">
               Reports content — exportable summaries.
             </TabsContent>
           </Tabs>
@@ -828,7 +755,7 @@ export default function ComponentsGallery() {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-semibold tabular-nums">$48,120</div>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="mt-1 text-body-compact text-muted-foreground">
                 <span className="text-foreground">▲ 12.5%</span> vs last month
               </p>
             </CardContent>
@@ -863,6 +790,8 @@ export default function ComponentsGallery() {
           </Card>
         </div>
       </Section>
+
+      <GalleryExtra />
     </div>
   )
 }

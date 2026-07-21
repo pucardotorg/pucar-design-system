@@ -102,7 +102,7 @@ function DocumentSlotTitle({ className, ...props }: React.ComponentProps<"div">)
 function DocumentSlotRequired({ className, ...props }: React.ComponentProps<"span">) {
   return (
     <span data-slot="document-slot-required" className={className} {...props}>
-      <span aria-hidden="true" className="font-semibold text-destructive">
+      <span aria-hidden="true" className="font-semibold text-destructive-ink">
         *
       </span>
       <span className="sr-only">Required</span>

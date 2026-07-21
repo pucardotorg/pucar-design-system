@@ -22,9 +22,11 @@ Calm, dignified **public service**. A courts product used by citizens under stre
 ### Colour
 - **Brand teal is rationed** — primary action, active state, focus. Never decoration.
 - **Status colours mean status** (success / warning / info / destructive), never styling.
+- **Each status hue has exactly three treatments** (ruling 2026-07-21): the **solid** (`success` + `success-foreground`) — a fill for the one strong action per view; the **tint pair** (`success-muted` + `success-muted-foreground`) — chips, callouts, flagged rows; the **ink** (`success-ink`) — status-coloured text and icons on neutral surfaces (page, card, wells). The solid is never a text colour; the ink is never a fill. Inks are engineered to clear 4.5:1 on the page *and* inside `surface-sunken` (amber-11 and blue-11 both missed, so `warning-ink`/`info-ink` are tuned — the amber stays amber rather than going brown-12).
+- **No alpha status/brand fills.** A translucent tint's contrast depends on whatever sits underneath (`bg-destructive/10` measured 4.44:1 on `accent` — under the floor). Every tint that carries text is an opaque, gate-verified pair. Alpha remains legal in exactly three places: focus rings, shadows, and washes over *content that must stay readable through them* (document-annotation highlights, scrims).
 - **Data-viz uses the categorical palette** (`chart-1…5`) — chosen for mutual distinction, *not* status meaning.
 - Neutrals carry structure (surfaces, borders, text).
-- **Greys split by job — structural vs interactive — and never share a step.** *Structural* greys separate content and are the stronger end: `surface-sunken` (nested wells — a **tuned** step between neutral-2 and 3 that separates on a white card **on its own, no border**), `track` (neutral-4 — recessed control tracks like the tabs list, progress, slider, so a white/teal active pops). *Interactive* greys are transient feedback and stay **lighter**: `accent` (neutral-3 — hover/selection). If a hover looks too heavy, it's using a structural grey by mistake; if a surface won't separate, it's using an interactive one.
+- **Greys form one monotone fill ladder, each step one job** (re-ruled 2026-07-21 — the old "interactive stays lighter than structural" wording was internally false): `muted`/`sidebar` (2 — quiet washes) → `surface-sunken` (tuned 2½ — nested wells, separating on a card **with no border**) → `accent` (3 — hover of white/transparent-rest controls, and the rest fill of `secondary`) → `accent-strong` (4 — one step further: hover of grey-rest controls, pressed toggles, expanded triggers) → `track` (5 — recessed control tracks, the darkest fill, so a white/teal active pops) → borders (5/7) → `input` (9). Interaction always moves **one step down the ladder** — a control never hovers to its own rest colour (the bug that made secondary-button hovers invisible). Never pick a raw `neutral-N` for any of these jobs.
 - **Depth is fill, not repeated borders.** The outer card keeps the one hairline; nested wells use `surface-sunken` with **no border of their own** — a border on a nested item reads as box-in-box. Exception: small chips/thumbnails are defined *by* a border. **Never pick a raw `neutral-N` for any surface/track/accent** — change the one token and it propagates everywhere.
 - **Never rely on colour alone.** Pair it with an icon, label, or arrow (e.g. ↑/↓ on deltas). *Colour-blind and bad-monitor safe.*
 
@@ -42,6 +44,12 @@ Calm, dignified **public service**. A courts product used by citizens under stre
 ### Elevation & shape
 - Depth is **semantic**: flat (page), raised (cards, optional), overlay (popovers), modal (dialogs). No decorative shadows.
 - One system radius (10px) and its derived scale. No loose values.
+- **Radius is assigned by role, not by eye** (ruling 2026-07-21): container (card, dialog, bordered region) → `xl` · control (button, field, track) → `lg` · inset item (menu row, list row, inner button) → `md`/`sm` · micro-control (checkbox) → derived `sm` · **chip → `full`, always**. Bare `rounded` (a fixed 4px that ignores the knob) is illegal. Siblings at the same anatomy level share one radius.
+
+### Control metrics
+- **Every field-like control defaults to 40px tall** — input, select, composed field (input-group), OTP slot, command input, tabs track. The size ladder is 32 / 36 / **40** / 44; smaller sizes are *opt-in* for staff-dense surfaces, never a primitive's default. Citizen-facing primary flows step up to 44 (`lg`).
+- **Container padding is one number: 24px** (`p-6`) — card, dialog, sheet, drawer, nested well. The `sm` card variant (staff-dense) uses 16. Nothing else.
+- **There is exactly one chip: `Badge`.** 24px tall, pill-shaped, caption type. Status variants (`success/warning/info/destructive`) use the opaque muted token pairs — never alpha fills, whose contrast shifts with the backdrop (`bg-destructive/10` measured 4.44:1 on `accent` — below AA).
 
 ---
 

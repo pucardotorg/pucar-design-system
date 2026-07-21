@@ -44,6 +44,7 @@
           "color-muted-foreground": "var(--muted-foreground)",
           "color-accent": "var(--accent)",
           "color-accent-foreground": "var(--accent-foreground)",
+          "color-accent-strong": "var(--accent-strong)",
           "color-destructive": "var(--destructive)",
           "color-success": "var(--success)",
           "color-info": "var(--info)",
@@ -57,6 +58,8 @@
           "color-info-muted-foreground": "var(--info-muted-foreground)",
           "color-destructive-muted": "var(--destructive-muted)",
           "color-destructive-muted-foreground": "var(--destructive-muted-foreground)",
+          "color-brand-muted": "var(--brand-muted)",
+          "color-brand-muted-foreground": "var(--brand-muted-foreground)",
           "color-prefilled": "var(--prefilled)",
           "color-border": "var(--border)",
           "color-input": "var(--input)",
@@ -75,6 +78,10 @@
           "color-sidebar-primary-foreground": "var(--sidebar-primary-foreground)",
           "color-brand-accent": "var(--brand-accent)",
           "color-surface-sunken": "var(--surface-sunken)",
+          "color-success-ink": "var(--success-ink)",
+          "color-warning-ink": "var(--warning-ink)",
+          "color-info-ink": "var(--info-ink)",
+          "color-destructive-ink": "var(--destructive-ink)",
           "color-chart-1": "var(--chart-1)",
           "color-chart-2": "var(--chart-2)",
           "color-chart-3": "var(--chart-3)",
@@ -110,9 +117,9 @@
           "text-caption": "0.75rem",
           "text-caption--line-height": "1rem",
           "text-caption--font-weight": "500",
-          "shadow-raised": "0 1px 2px 0 rgb(0 0 0 / 0.04), 0 1px 3px 0 rgb(0 0 0 / 0.07)",
-          "shadow-overlay": "0 4px 8px -2px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.06)",
-          "shadow-modal": "0 16px 32px -8px rgb(0 0 0 / 0.18), 0 6px 12px -6px rgb(0 0 0 / 0.12)"
+          "shadow-raised": "var(--elevation-raised)",
+          "shadow-overlay": "var(--elevation-overlay)",
+          "shadow-modal": "var(--elevation-modal)"
         },
         "light": {
           "neutral-1": "#fcfcfd",
@@ -192,7 +199,12 @@
           "info-solid": "#0d74ce",
           "destructive-solid": "#c1232a",
           "brand-accent": "#12a594",
+          "brand-tint-foreground": "#0a6969",
           "surface-sunken": "#f4f4f7",
+          "success-ink": "#2a7e3b",
+          "warning-ink": "#9d5c00",
+          "info-ink": "#0c6ec3",
+          "destructive-ink": "#ce2c31",
           "chart-1": "#007E7E",
           "chart-2": "#0d74ce",
           "chart-3": "#6e56cf",
@@ -206,27 +218,30 @@
           "popover-foreground": "var(--neutral-12)",
           "surface": "var(--neutral-1)",
           "surface-raised": "var(--neutral-1)",
-          "track": "var(--neutral-4)",
+          "track": "var(--neutral-5)",
           "primary": "var(--brand-solid)",
           "secondary": "var(--neutral-3)",
-          "secondary-foreground": "var(--neutral-11)",
+          "secondary-foreground": "var(--neutral-12)",
           "muted": "var(--neutral-2)",
           "muted-foreground": "var(--neutral-11)",
           "accent": "var(--neutral-3)",
           "accent-foreground": "var(--neutral-12)",
+          "accent-strong": "var(--neutral-4)",
           "destructive": "var(--destructive-solid)",
           "success": "var(--success-solid)",
           "info": "var(--info-solid)",
           "warning": "var(--warning-9)",
           "warning-foreground": "#3d2000",
           "success-muted": "var(--success-3)",
-          "success-muted-foreground": "var(--success-11)",
+          "success-muted-foreground": "var(--success-ink)",
           "warning-muted": "var(--warning-3)",
-          "warning-muted-foreground": "var(--warning-12)",
+          "warning-muted-foreground": "var(--warning-ink)",
           "info-muted": "var(--info-3)",
-          "info-muted-foreground": "var(--info-12)",
+          "info-muted-foreground": "var(--info-ink)",
           "destructive-muted": "var(--destructive-3)",
-          "destructive-muted-foreground": "var(--destructive-11)",
+          "destructive-muted-foreground": "var(--destructive-ink)",
+          "brand-muted": "var(--brand-3)",
+          "brand-muted-foreground": "var(--brand-tint-foreground)",
           "prefilled": "var(--warning-2)",
           "border": "var(--neutral-7)",
           "input": "var(--neutral-9)",
@@ -246,7 +261,10 @@
           "font-sans": "\"Helvetica Neue\", Helvetica, Arial, system-ui, sans-serif",
           "font-mono": "ui-monospace, \"SF Mono\", Menlo, Consolas, monospace",
           "font-heading": "\"Helvetica Neue\", Helvetica, Arial, system-ui, sans-serif",
-          "radius": "0.625rem"
+          "radius": "0.625rem",
+          "elevation-raised": "0 1px 2px 0 rgb(0 0 0 / 0.04), 0 1px 3px 0 rgb(0 0 0 / 0.07)",
+          "elevation-overlay": "0 4px 8px -2px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.06)",
+          "elevation-modal": "0 16px 32px -8px rgb(0 0 0 / 0.18), 0 6px 12px -6px rgb(0 0 0 / 0.12)"
         },
         "dark": {
           "neutral-1": "#111113",
@@ -326,7 +344,12 @@
           "info-solid": "#3b9eff",
           "destructive-solid": "#ec5d5e",
           "brand-accent": "#12a594",
+          "brand-tint-foreground": "#0bd8b6",
           "surface-sunken": "#1d1e21",
+          "success-ink": "#71d083",
+          "warning-ink": "#ffca16",
+          "info-ink": "#70b8ff",
+          "destructive-ink": "#ff9592",
           "chart-1": "#0eb39e",
           "chart-2": "#3b9eff",
           "chart-3": "#9e8cff",
@@ -336,7 +359,10 @@
           "destructive-foreground": "#0a0a0a",
           "success-foreground": "#0a0a0a",
           "info-foreground": "#0a0a0a",
-          "sidebar-primary-foreground": "#0a0a0a"
+          "sidebar-primary-foreground": "#0a0a0a",
+          "elevation-raised": "0 1px 2px 0 rgb(0 0 0 / 0.30), 0 1px 3px 0 rgb(0 0 0 / 0.40)",
+          "elevation-overlay": "0 4px 8px -2px rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.35)",
+          "elevation-modal": "0 16px 32px -8px rgb(0 0 0 / 0.60), 0 6px 12px -6px rgb(0 0 0 / 0.45)"
         }
       },
       "registryDependencies": [
@@ -1244,21 +1270,6 @@
       ]
     },
     {
-      "name": "status-pill",
-      "type": "registry:component",
-      "title": "Status pill",
-      "description": "Rounded-full status chip (AA-safe, sentence case).",
-      "files": [
-        {
-          "path": "components/status-pill.tsx",
-          "type": "registry:component"
-        }
-      ],
-      "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
-      ]
-    },
-    {
       "name": "site-shell",
       "type": "registry:component",
       "title": "App shell",
@@ -1297,7 +1308,7 @@
       ],
       "registryDependencies": [
         "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/status-pill.json",
+        "https://pucar-ui.vercel.app/r/badge.json",
         "https://pucar-ui.vercel.app/r/card.json",
         "https://pucar-ui.vercel.app/r/table.json",
         "https://pucar-ui.vercel.app/r/chart.json",

@@ -200,7 +200,7 @@ export function DocumentViewer({ s }: { s: ScrutinyState }) {
                 ref={pageRef}
                 onPointerDown={handlePointerDown}
                 style={{ transform: `scale(${s.zoom})`, transformOrigin: "top center" }}
-                className="relative min-h-[840px] w-[640px] shrink-0 select-none rounded bg-card p-12 shadow-[0_1px_2px_rgb(28_32_36/0.06),0_8px_24px_-8px_rgb(28_32_36/0.14)] ring-1 ring-border"
+                className="relative min-h-[840px] w-[640px] shrink-0 select-none rounded-sm bg-card p-12 shadow-[0_1px_2px_rgb(28_32_36/0.06),0_8px_24px_-8px_rgb(28_32_36/0.14)] ring-1 ring-border"
               >
                 <EvidenceProvider highlightedField={highlightedField}>
                   <DocContent />

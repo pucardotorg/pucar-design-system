@@ -22,6 +22,8 @@ Space is not decoration; it *is* the grouping structure. Related things sit clos
 
 **The ladder — these gaps only.** Tailwind: `1=4px 2=8px 3=12px 4=16px 6=24px 8=32px 12=48px 16=64px`. Never arbitrary values (`p-[13px]`, `mt-5`, `gap-7` are all bugs). If a design feels like it needs an in-between value, the grouping is wrong, not the ladder.
 
+**Micro-spacing addendum (ruling 2026-07-21):** *inside* a single control or chip — icon↔label, chip padding, track inset — the half-steps `0.5=2px 1.5=6px 2.5=10px` are legal, because text metrics need them. They are **never** legal *between* elements: layout gaps come only from the ladder above. (`gap-1.5` inside a button: fine. `space-y-1.5` between a title and subtitle: fine, that pair is one lockup. `gap-2.5` between two cards: bug.)
+
 **Distance encodes relationship:**
 
 | Relationship | Gap |

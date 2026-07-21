@@ -33,7 +33,7 @@ export function FlagComposer({ s }: { s: ScrutinyState }) {
   return (
     <div className="-m-2.5 flex w-80 flex-col overflow-hidden rounded-lg">
       <div className="flex items-center gap-2 border-b bg-muted/40 px-3.5 py-3">
-        <FlagIcon className="size-4 shrink-0 text-destructive" />
+        <FlagIcon className="size-4 shrink-0 text-destructive-ink" />
         <div className="min-w-0 flex-1">
           <div className="truncate text-caption font-semibold">{context.title}</div>
           <div className="truncate text-caption text-muted-foreground">{context.sub}</div>
@@ -48,13 +48,13 @@ export function FlagComposer({ s }: { s: ScrutinyState }) {
           <div className="flex flex-col gap-1.5">
             {draft.evidence.map((e, i) => (
               <div key={i} className="flex items-center gap-2 rounded-md border bg-muted/40 px-2.5 py-1.5">
-                <RectangleHorizontalIcon className="size-3.5 shrink-0 text-destructive" />
+                <RectangleHorizontalIcon className="size-3.5 shrink-0 text-destructive-ink" />
                 <span className="min-w-0 flex-1 truncate text-body-compact font-medium">
                   Evidence on {DOCS.find((d) => d.id === e.docId)!.name}
                 </span>
                 <button
                   aria-label="Remove evidence"
-                  className="shrink-0 rounded p-0.5 text-muted-foreground hover:bg-accent hover:text-foreground"
+                  className="shrink-0 rounded-sm p-0.5 text-muted-foreground hover:bg-accent hover:text-foreground"
                   onClick={() => s.removeDraftEvidence(i)}
                 >
                   <XIcon className="size-3.5" />

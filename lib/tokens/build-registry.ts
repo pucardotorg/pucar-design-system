@@ -25,6 +25,8 @@ import {
   BRAND_ACCENT,
   SOLID_FOREGROUND,
   SURFACE_SUNKEN,
+  STATUS_INKS,
+  BRAND_TINT_FOREGROUND,
   SEMANTIC_REFS,
   SOLID_FOREGROUND_TOKENS,
   UTILITY_PRIMITIVES,
@@ -65,7 +67,11 @@ function primitives(theme: Theme): Vars {
   o["info-solid"] = SOLIDS.info[theme]
   o["destructive-solid"] = SOLIDS.destructive[theme]
   o["brand-accent"] = BRAND_ACCENT
+  // brand-tint-foreground was referenced by sidebar-accent-foreground but never
+  // DEFINED in the registry vars — consumer apps got var(undefined). Fixed 2026-07-21.
+  o["brand-tint-foreground"] = BRAND_TINT_FOREGROUND[theme]
   o["surface-sunken"] = SURFACE_SUNKEN[theme] // tuned per-theme nested-surface fill
+  for (const [hue, ink] of Object.entries(STATUS_INKS)) o[`${hue}-ink`] = ink[theme]
   CHART_PALETTE[theme].forEach((hex, i) => (o[`chart-${i + 1}`] = hex))
   return o
 }
@@ -119,19 +125,24 @@ const themeVars: Vars = {
     })
   ),
 
-  // Elevation
-  ...Object.fromEntries(Object.entries(SHADOWS).map(([name, v]) => [`shadow-${name}`, v])),
+  // Elevation — indirected through --elevation-* (values are per-theme, see light/dark vars)
+  ...Object.fromEntries(Object.keys(SHADOWS).map((name) => [`shadow-${name}`, `var(--elevation-${name})`])),
 }
+
+const elevationVars = (theme: "light" | "dark") =>
+  Object.fromEntries(Object.entries(SHADOWS).map(([name, v]) => [`elevation-${name}`, v[theme]]))
 
 const lightVars: Vars = {
   ...primitives("light"),
   ...SEMANTIC_REFS,
   ...Object.fromEntries(SOLID_FOREGROUND_TOKENS.map((t) => [t, SOLID_FOREGROUND.light])),
   ...scales,
+  ...elevationVars("light"),
 }
 const darkVars: Vars = {
   ...primitives("dark"),
   ...Object.fromEntries(SOLID_FOREGROUND_TOKENS.map((t) => [t, SOLID_FOREGROUND.dark])),
+  ...elevationVars("dark"),
 }
 
 // ── registry:ui items — one per themed component, deps read from the imports ──
@@ -231,14 +242,6 @@ const registry = {
     ...uiItems,
     ...hookItems.values(),
     {
-      name: "status-pill",
-      type: "registry:component",
-      title: "Status pill",
-      description: "Rounded-full status chip (AA-safe, sentence case).",
-      files: [{ path: "components/status-pill.tsx", type: "registry:component" }],
-      registryDependencies: [own("pucar-theme")],
-    },
-    {
       name: "site-shell",
       type: "registry:component",
       title: "App shell",
@@ -261,7 +264,7 @@ const registry = {
         { path: "app/(shell)/dashboard/page.tsx", type: "registry:page", target: "app/dashboard/page.tsx" },
       ],
       registryDependencies: [
-        own("pucar-theme"), own("status-pill"), own("card"), own("table"), own("chart"), own("button"),
+        own("pucar-theme"), own("badge"), own("card"), own("table"), own("chart"), own("button"),
       ],
     },
     {

@@ -58,6 +58,19 @@
   --color-destructive-muted: var(--destructive-muted);
   --color-destructive-muted-foreground: var(--destructive-muted-foreground);
 
+  /* Status — inks (text/icons on neutral surfaces; the solid is a fill, never text) */
+  --color-success-ink: var(--success-ink);
+  --color-warning-ink: var(--warning-ink);
+  --color-info-ink: var(--info-ink);
+  --color-destructive-ink: var(--destructive-ink);
+
+  /* Brand tint pair — identity tiles, brand-tinted chips (no more bg-primary/10) */
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-muted-foreground: var(--brand-muted-foreground);
+
+  /* Interactive grey one step past accent — pressed toggles, hover on grey-rest controls */
+  --color-accent-strong: var(--accent-strong);
+
   /* Machine-prefilled, human-unverified field fill (see design-guidelines §Colour) */
   --color-prefilled: var(--prefilled);
 
@@ -126,10 +139,11 @@
   --text-caption--line-height: 1rem; /* 16 */
   --text-caption--font-weight: 500;
 
-  /* Elevation — Flat / Raised / Overlay / Modal. Semantic depth, never decoration. */
-  --shadow-raised: 0 1px 2px 0 rgb(0 0 0 / 0.04), 0 1px 3px 0 rgb(0 0 0 / 0.07);
-  --shadow-overlay: 0 4px 8px -2px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.06);
-  --shadow-modal: 0 16px 32px -8px rgb(0 0 0 / 0.18), 0 6px 12px -6px rgb(0 0 0 / 0.12);
+  /* Elevation — Flat / Raised / Overlay / Modal. Semantic depth, never decoration.
+     Indirected through --elevation-* so the values flip per theme (dark needs deeper ink). */
+  --shadow-raised: var(--elevation-raised);
+  --shadow-overlay: var(--elevation-overlay);
+  --shadow-modal: var(--elevation-modal);
 }
 
 :root {
@@ -213,6 +227,10 @@
   --brand-accent: #12a594;
   --brand-tint-foreground: #0a6969;
   --surface-sunken: #f4f4f7;
+  --success-ink: #2a7e3b;
+  --warning-ink: #9d5c00;
+  --info-ink: #0c6ec3;
+  --destructive-ink: #ce2c31;
   --chart-1: #007E7E;
   --chart-2: #0d74ce;
   --chart-3: #6e56cf;
@@ -228,27 +246,30 @@
   --popover-foreground: var(--neutral-12);
   --surface: var(--neutral-1);
   --surface-raised: var(--neutral-1);
-  --track: var(--neutral-4);
+  --track: var(--neutral-5);
   --primary: var(--brand-solid);
   --secondary: var(--neutral-3);
-  --secondary-foreground: var(--neutral-11);
+  --secondary-foreground: var(--neutral-12);
   --muted: var(--neutral-2);
   --muted-foreground: var(--neutral-11);
   --accent: var(--neutral-3);
   --accent-foreground: var(--neutral-12);
+  --accent-strong: var(--neutral-4);
   --destructive: var(--destructive-solid);
   --success: var(--success-solid);
   --info: var(--info-solid);
   --warning: var(--warning-9);
   --warning-foreground: #3d2000;
   --success-muted: var(--success-3);
-  --success-muted-foreground: var(--success-11);
+  --success-muted-foreground: var(--success-ink);
   --warning-muted: var(--warning-3);
-  --warning-muted-foreground: var(--warning-12);
+  --warning-muted-foreground: var(--warning-ink);
   --info-muted: var(--info-3);
-  --info-muted-foreground: var(--info-12);
+  --info-muted-foreground: var(--info-ink);
   --destructive-muted: var(--destructive-3);
-  --destructive-muted-foreground: var(--destructive-11);
+  --destructive-muted-foreground: var(--destructive-ink);
+  --brand-muted: var(--brand-3);
+  --brand-muted-foreground: var(--brand-tint-foreground);
   --prefilled: var(--warning-2);
   --border: var(--neutral-7);
   --input: var(--neutral-9);
@@ -271,6 +292,11 @@
   --font-mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
   --font-heading: "Helvetica Neue", Helvetica, Arial, system-ui, sans-serif;
   --radius: 0.625rem;
+
+  /* Elevation values (light) */
+  --elevation-raised: 0 1px 2px 0 rgb(0 0 0 / 0.04), 0 1px 3px 0 rgb(0 0 0 / 0.07);
+  --elevation-overlay: 0 4px 8px -2px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.06);
+  --elevation-modal: 0 16px 32px -8px rgb(0 0 0 / 0.18), 0 6px 12px -6px rgb(0 0 0 / 0.12);
 }
 
 .dark {
@@ -354,6 +380,10 @@
   --brand-accent: #12a594;
   --brand-tint-foreground: #0bd8b6;
   --surface-sunken: #1d1e21;
+  --success-ink: #71d083;
+  --warning-ink: #ffca16;
+  --info-ink: #70b8ff;
+  --destructive-ink: #ff9592;
   --chart-1: #0eb39e;
   --chart-2: #3b9eff;
   --chart-3: #9e8cff;
@@ -366,6 +396,11 @@
   --success-foreground: #0a0a0a;
   --info-foreground: #0a0a0a;
   --sidebar-primary-foreground: #0a0a0a;
+
+  /* Elevation values (dark) — deeper ink so depth survives dark surfaces */
+  --elevation-raised: 0 1px 2px 0 rgb(0 0 0 / 0.30), 0 1px 3px 0 rgb(0 0 0 / 0.40);
+  --elevation-overlay: 0 4px 8px -2px rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.35);
+  --elevation-modal: 0 16px 32px -8px rgb(0 0 0 / 0.60), 0 6px 12px -6px rgb(0 0 0 / 0.45);
 }
 /* pucar-tokens:end */
 

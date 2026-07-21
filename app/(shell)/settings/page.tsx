@@ -38,7 +38,7 @@ function Field({
       <Label htmlFor={htmlFor}>{label}</Label>
       {children}
       {error ? (
-        <p className="text-caption text-destructive">{error}</p>
+        <p className="text-caption text-destructive-ink">{error}</p>
       ) : hint ? (
         <p className="text-caption text-muted-foreground">{hint}</p>
       ) : null}

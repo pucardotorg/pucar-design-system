@@ -31,7 +31,7 @@ const fieldLegendVariants = cva("mb-3 font-medium", {
   variants: {
     variant: {
       legend: "text-body",
-      label: "text-sm",
+      label: "text-body-compact",
     },
   },
   defaultVariants: {
@@ -68,7 +68,7 @@ function FieldGroup({ className, ...props }: React.ComponentProps<"div">) {
   )
 }
 
-const fieldVariants = cva("group/field flex w-full gap-2 data-[invalid=true]:text-destructive", {
+const fieldVariants = cva("group/field flex w-full gap-2 data-[invalid=true]:text-destructive-ink", {
   variants: {
     orientation: {
       // Default: label above field — the Pucar form law.
@@ -130,7 +130,7 @@ function FieldTitle({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
       data-slot="field-title"
-      className={cn("flex w-fit items-center gap-2 text-sm font-medium leading-snug", className)}
+      className={cn("flex w-fit items-center gap-2 text-body-compact font-medium leading-snug", className)}
       {...props}
     />
   )
@@ -159,7 +159,7 @@ function FieldSeparator({
     <div
       data-slot="field-separator"
       data-content={!!children}
-      className={cn("relative -my-2 h-5 text-sm", className)}
+      className={cn("relative -my-2 h-5 text-body-compact", className)}
       {...props}
     >
       <Separator className="absolute inset-0 top-1/2" />
@@ -203,7 +203,7 @@ function FieldError({
     <div
       role="alert"
       data-slot="field-error"
-      className={cn("text-caption font-normal text-destructive", className)}
+      className={cn("text-caption font-normal text-destructive-ink", className)}
       {...props}
     >
       {content}

@@ -59,7 +59,7 @@ function PendingPaymentDialog() {
       className="sm:max-w-md gap-0 p-0 max-h-[90vh] grid-rows-[auto_auto_1fr_auto]"
     >
       {/* Header */}
-      <DialogHeader className="p-5 pb-4">
+      <DialogHeader className="p-6 pb-4">
         <DialogTitle className="text-title-s">Pending payment</DialogTitle>
         <DialogDescription>
           Your complaint under S.138 is ready once this is paid.
@@ -69,7 +69,7 @@ function PendingPaymentDialog() {
       <Separator />
 
       {/* Body */}
-      <div className="space-y-4 overflow-y-auto p-5">
+      <div className="space-y-4 overflow-y-auto p-6">
         {/* Amount receipt — the total leads, its make-up sits below it. */}
         <div className="rounded-xl bg-surface-sunken">
           <div className="flex items-start justify-between gap-3 p-4">
@@ -106,7 +106,7 @@ function PendingPaymentDialog() {
 
         {/* One calm note — title + supporting line, clear hierarchy. */}
         <div className="flex gap-3 rounded-xl bg-info-muted p-4">
-          <InfoIcon className="mt-0.5 size-4 shrink-0 text-info" />
+          <InfoIcon className="mt-0.5 size-4 shrink-0 text-info-ink" />
           <div className="space-y-1">
             <p className="text-body-compact font-semibold text-foreground">
               We&apos;re verifying your payment
@@ -140,7 +140,7 @@ function PendingPaymentDialog() {
       </div>
 
       {/* Footer — margins reset (parent is p-0), primary leads, quiet way out. */}
-      <DialogFooter className="m-0 flex-col gap-2 px-5 py-4 sm:flex-col">
+      <DialogFooter className="m-0 flex-col gap-2 px-6 py-4 sm:flex-col">
         <Button size="lg" className="w-full">
           <CreditCardIcon />
           Pay online now
@@ -170,7 +170,7 @@ export default function TestUIPage() {
 
       <div className="rounded-xl border bg-card p-6">
         <div className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <div className="flex size-10 items-center justify-center rounded-lg bg-brand-muted text-brand-muted-foreground">
             <CreditCardIcon className="size-5" />
           </div>
           <div className="min-w-0">

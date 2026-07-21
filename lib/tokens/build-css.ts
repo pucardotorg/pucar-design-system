@@ -16,6 +16,7 @@ import {
   BRAND_TINT_FOREGROUND,
   SOLID_FOREGROUND,
   SURFACE_SUNKEN,
+  STATUS_INKS,
   SEMANTIC_REFS,
   SOLID_FOREGROUND_TOKENS,
   CHART_PALETTE,
@@ -48,6 +49,8 @@ function primitiveLines(theme: Theme): string[] {
   out.push(`  --brand-accent: ${BRAND_ACCENT};`)
   out.push(`  --brand-tint-foreground: ${BRAND_TINT_FOREGROUND[theme]};`) // engineered teal text on brand-3 (selection pair)
   out.push(`  --surface-sunken: ${SURFACE_SUNKEN[theme]};`) // tuned per-theme nested-surface fill (between neutral-2 and 3)
+  for (const [hue, ink] of Object.entries(STATUS_INKS))
+    out.push(`  --${hue}-ink: ${ink[theme]};`) // engineered status ink — AA on page AND wells
   CHART_PALETTE[theme].forEach((hex, i) => out.push(`  --chart-${i + 1}: ${hex};`))
   return out
 }
@@ -83,9 +86,14 @@ function themeScaleLines(): string[] {
     if (t.weight !== 400) out.push(`  --text-${name}--font-weight: ${t.weight};`)
   }
   out.push("")
-  out.push("  /* Elevation — Flat / Raised / Overlay / Modal. Semantic depth, never decoration. */")
-  for (const [name, v] of Object.entries(SHADOWS)) out.push(`  --shadow-${name}: ${v};`)
+  out.push("  /* Elevation — Flat / Raised / Overlay / Modal. Semantic depth, never decoration.")
+  out.push("     Indirected through --elevation-* so the values flip per theme (dark needs deeper ink). */")
+  for (const name of Object.keys(SHADOWS)) out.push(`  --shadow-${name}: var(--elevation-${name});`)
   return out
+}
+
+function elevationLines(theme: "light" | "dark"): string[] {
+  return Object.entries(SHADOWS).map(([name, v]) => `  --elevation-${name}: ${v[theme]};`)
 }
 
 const START = "/* pucar-tokens:start"
@@ -107,6 +115,9 @@ ${foregroundLines("light").join("\n")}
 
   /* Scales */
 ${scaleLines().join("\n")}
+
+  /* Elevation values (light) */
+${elevationLines("light").join("\n")}
 }
 
 .dark {
@@ -115,6 +126,9 @@ ${primitiveLines("dark").join("\n")}
 
   /* Foregrounds on solids flip white → ink in dark theme */
 ${foregroundLines("dark").join("\n")}
+
+  /* Elevation values (dark) — deeper ink so depth survives dark surfaces */
+${elevationLines("dark").join("\n")}
 }
 ${END}`
 

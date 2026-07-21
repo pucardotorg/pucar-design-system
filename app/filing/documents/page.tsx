@@ -171,7 +171,7 @@ function FileThumb({
       )}
     >
       <FileTextIcon className="absolute top-1/2 left-1/2 size-6 -translate-x-1/2 -translate-y-1/2 text-muted-foreground/60" />
-      <span className="absolute bottom-1 left-1 rounded bg-foreground px-1 py-px text-caption leading-none font-medium text-background">
+      <span className="absolute bottom-1 left-1 rounded-sm bg-foreground px-1 py-px text-caption leading-none font-medium text-background">
         {type}
       </span>
       <span className="absolute inset-0 flex items-center justify-center bg-foreground/0 opacity-0 transition-opacity group-hover/thumb:bg-foreground/5 group-hover/thumb:opacity-100">
@@ -215,7 +215,7 @@ function UploadSlot({
             {slot.title}
           </span>
           {failed ? (
-            <div className="mt-0.5 flex items-center gap-1.5 text-caption font-medium text-destructive">
+            <div className="mt-0.5 flex items-center gap-1.5 text-caption font-medium text-destructive-ink">
               <TriangleAlertIcon className="size-3.5 shrink-0" />
               Upload failed — check the file and try again
             </div>
@@ -234,7 +234,7 @@ function UploadSlot({
             </Button>
           ) : (
             <CheckCircle2Icon
-              className="size-5 text-success"
+              className="size-5 text-success-ink"
               aria-label="Uploaded"
             />
           )}
@@ -282,7 +282,7 @@ function DocCardBlock({
     <div className="rounded-xl border bg-card">
       <div className="flex items-center justify-between gap-3 px-4 pt-4 pb-2">
         <div className="flex items-center gap-2.5">
-          <div className="flex size-8 items-center justify-center rounded-md bg-primary/10 text-primary">
+          <div className="flex size-8 items-center justify-center rounded-md bg-brand-muted text-brand-muted-foreground">
             <card.icon className="size-4" />
           </div>
           <span className="text-body font-medium">{card.label}</span>
@@ -427,7 +427,7 @@ export default function FilingDocumentsPage() {
               <SectionLabel>Notice &amp; service</SectionLabel>
               <div className="rounded-xl border bg-card">
                 <div className="flex items-center gap-2.5 px-4 pt-4 pb-2">
-                  <div className="flex size-8 items-center justify-center rounded-md bg-primary/10 text-primary">
+                  <div className="flex size-8 items-center justify-center rounded-md bg-brand-muted text-brand-muted-foreground">
                     <MailIcon className="size-4" />
                   </div>
                   <span className="text-body font-medium">
@@ -462,13 +462,13 @@ export default function FilingDocumentsPage() {
 
           {/* Help rail */}
           <aside className="hidden lg:block">
-            <div className="sticky top-24 space-y-4 rounded-xl border bg-card p-5">
+            <div className="sticky top-24 space-y-4 rounded-xl border bg-card p-6">
               <div>
                 <h3 className="text-body font-medium">How to upload</h3>
                 <ul className="mt-3 space-y-2.5">
                   {uploadTips.map((tip) => (
                     <li key={tip} className="flex gap-2.5">
-                      <CheckIcon className="mt-0.5 size-4 shrink-0 text-success" />
+                      <CheckIcon className="mt-0.5 size-4 shrink-0 text-success-ink" />
                       <span className="text-body-compact text-muted-foreground">
                         {tip}
                       </span>

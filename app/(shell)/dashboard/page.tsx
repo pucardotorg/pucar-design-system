@@ -13,6 +13,7 @@ import {
 } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import {
   Card,
@@ -67,10 +68,11 @@ const caseStatus = [
 ]
 
 type Status = "Ready" | "Awaiting docs" | "Adjourn req."
-const statusStyles: Record<Status, string> = {
-  Ready: "bg-success-muted text-success-muted-foreground",
-  "Awaiting docs": "bg-warning-muted text-warning-muted-foreground",
-  "Adjourn req.": "bg-destructive/10 text-destructive",
+// Status → the one chip's status variants (chip merge, 2026-07-21).
+const statusVariant: Record<Status, "success" | "warning" | "destructive"> = {
+  Ready: "success",
+  "Awaiting docs": "warning",
+  "Adjourn req.": "destructive",
 }
 const hearings: { time: string; cnr: string; parties: string; stage: string; status: Status }[] = [
   { time: "10:00", cnr: "KLKM01001234/2024", parties: "Rajini K. v. State", stage: "Bail", status: "Ready" },
@@ -80,18 +82,14 @@ const hearings: { time: string; cnr: string; parties: string; stage: string; sta
 ]
 
 function StatusPill({ status }: { status: Status }) {
-  return (
-    <span className={cn("inline-flex items-center rounded-full px-2.5 py-1 text-caption font-medium", statusStyles[status])}>
-      {status}
-    </span>
-  )
+  return <Badge variant={statusVariant[status]}>{status}</Badge>
 }
 
 export default function DashboardPage() {
   return (
     <div className="mx-auto max-w-7xl space-y-6">
       {/* Stat cards */}
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
           <Card key={s.label}>
             <CardContent>
@@ -103,7 +101,7 @@ export default function DashboardPage() {
               <div
                 className={cn(
                   "mt-1 flex items-center gap-1 text-caption font-medium",
-                  s.tone === "pos" ? "text-success" : "text-destructive"
+                  s.tone === "pos" ? "text-success-ink" : "text-destructive-ink"
                 )}
               >
                 {s.arrow === "up" ? (
@@ -119,7 +117,7 @@ export default function DashboardPage() {
       </div>
 
       {/* Chart + share of docket */}
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="grid gap-6 lg:grid-cols-3">
         <Card className="lg:col-span-2">
           <CardHeader>
             <div className="flex items-start justify-between gap-4">

@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/select"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Toggle } from "@/components/ui/toggle"
-import { StatusPill } from "@/components/status-pill"
+import { Badge } from "@/components/ui/badge"
 
 import { DOCS, FieldDef, FIELDS, SECTIONS, SectionId } from "./data"
 import { ScrutinyState } from "./use-scrutiny"
@@ -86,9 +86,9 @@ export function FieldsPanel({ s }: { s: ScrutinyState }) {
                   <TabsTrigger key={sec.id} value={sec.id} className="gap-1.5 rounded-none pb-2.5">
                     {sec.label}
                     {n > 0 && (
-                      <StatusPill tone="waiting" className="px-1.5 py-0 text-[11px]">
+                      <Badge variant="warning">
                         {n}
-                      </StatusPill>
+                      </Badge>
                     )}
                   </TabsTrigger>
                 )
@@ -205,7 +205,7 @@ function FieldRow({ f, s }: { f: FieldDef; s: ScrutinyState }) {
         {state === "verified" && (
           <span
             title={`Matches ${DOCS.find((d) => d.id === f.verified)!.name}`}
-            className="shrink-0 text-success"
+            className="shrink-0 text-success-ink"
           >
             <CheckIcon className="size-3.5" />
           </span>
@@ -264,7 +264,7 @@ function FieldRow({ f, s }: { f: FieldDef; s: ScrutinyState }) {
       }}
       className={cn(
         "group relative cursor-pointer border-b px-4.5 py-3.5 transition-colors hover:bg-muted/50",
-        selected && "bg-primary/5"
+        selected && "bg-brand-muted"
       )}
     >
       {selected && <span className="absolute inset-y-2.5 left-0 w-[2.5px] rounded-full bg-primary" aria-hidden />}
@@ -321,7 +321,7 @@ function FlagCallouts({ f, s, stop }: { f: FieldDef; s: ScrutinyState; stop: (e:
     <>
       {flags.map((fl) => (
         <div key={fl.id} className="mt-2.5 rounded-md border-l-[3px] border-destructive bg-destructive/4 px-3 py-2.5">
-          <div className="flex items-center gap-1.5 text-[11px] font-semibold text-destructive">
+          <div className="flex items-center gap-1.5 text-caption font-semibold text-destructive-ink">
             <FlagIcon className="size-3" />
             Your flag
             {fl.audio && (
@@ -350,7 +350,7 @@ function FlagCallouts({ f, s, stop }: { f: FieldDef; s: ScrutinyState; stop: (e:
                   onClick={(ev) => { stop(ev); s.viewEvidence(fl.id, i) }}
                   className="inline-flex items-center gap-1.5 rounded-full border bg-card px-2.5 py-1 text-caption font-medium transition-colors hover:bg-muted"
                 >
-                  <RectangleHorizontalIcon className="size-3 text-destructive" />
+                  <RectangleHorizontalIcon className="size-3 text-destructive-ink" />
                   {DOCS.find((d) => d.id === e.docId)!.name}
                 </button>
               ))}

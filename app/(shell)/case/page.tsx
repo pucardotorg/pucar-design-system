@@ -19,7 +19,7 @@ import {
 } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { StatusPill } from "@/components/status-pill"
+import { Badge } from "@/components/ui/badge"
 
 const facts = [
   { label: "Case type", value: "S.138 NI Act" },
@@ -60,7 +60,7 @@ export default function CaseDetailPage() {
               <p className="font-mono text-body-compact text-muted-foreground">
                 KLKM01-001234/2024
               </p>
-              <StatusPill tone="info">Under hearing</StatusPill>
+              <Badge variant="info">Under hearing</Badge>
             </div>
           </div>
           <div className="flex items-center gap-2">
@@ -116,7 +116,7 @@ export default function CaseDetailPage() {
                 <CardContent className="p-0">
                   <ul className="divide-y divide-border">
                     {timeline.map((h) => (
-                      <li key={h.date} className="flex gap-4 px-5 py-4">
+                      <li key={h.date} className="flex gap-4 px-6 py-4">
                         <div className="flex flex-col items-center pt-1">
                           <span
                             className={cn(
@@ -128,7 +128,7 @@ export default function CaseDetailPage() {
                         <div className="min-w-0 flex-1 space-y-0.5">
                           <div className="flex items-center gap-2">
                             <span className="text-body-compact font-medium">{h.purpose}</span>
-                            {h.upcoming ? <StatusPill tone="ready">Upcoming</StatusPill> : null}
+                            {h.upcoming ? <Badge variant="success">Upcoming</Badge> : null}
                           </div>
                           <p className="text-body-compact text-muted-foreground">{h.note}</p>
                         </div>
@@ -160,7 +160,7 @@ export default function CaseDetailPage() {
             <CardContent className="space-y-4">
               <div className="flex items-center gap-3">
                 <Avatar className="size-9">
-                  <AvatarFallback className="bg-primary/10 text-caption text-primary">RK</AvatarFallback>
+                  <AvatarFallback className="bg-brand-muted text-caption text-brand-muted-foreground">RK</AvatarFallback>
                 </Avatar>
                 <div className="min-w-0 flex-1">
                   <div className="text-body-compact font-medium">Rajini K.</div>

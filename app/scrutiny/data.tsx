@@ -208,7 +208,7 @@ function DocStamp({ children }: { children: React.ReactNode }) {
 }
 function DocPhoto() {
   return (
-    <div className="float-left mr-5 flex h-24 w-20 items-center justify-center rounded border bg-muted text-caption text-muted-foreground">
+    <div className="float-left mr-5 flex h-24 w-20 items-center justify-center rounded-sm border bg-muted text-caption text-muted-foreground">
       Photo
     </div>
   )
@@ -282,7 +282,7 @@ export const DOC_CONTENT: Record<DocId, React.FC> = {
         <DocLine className="mt-6">Pay: <b>Om Kumar</b></DocLine>
         <DocLine className="flex items-baseline justify-between">
           <span>Rupees: <FieldSpan id="amount">Two lakh forty thousand only</FieldSpan></span>
-          <span className="rounded border px-2.5 py-0.5">
+          <span className="rounded-sm border px-2.5 py-0.5">
             ₹ <b className="font-mono"><FieldSpan id="amount2">2,40,000</FieldSpan></b>
           </span>
         </DocLine>

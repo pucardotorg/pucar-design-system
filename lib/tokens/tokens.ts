@@ -29,6 +29,19 @@ export const SOLIDS: Record<"brand" | "success" | "info" | "destructive", { ligh
 
 // Warning is dark-text-only in BOTH themes (amber-9 fill + ink label).
 export const WARNING_FOREGROUND = "#3d2000"
+
+// Status INKS — status-coloured text/icons on NEUTRAL surfaces (page, card, wells).
+// Engineered like SOLIDS: light values must clear 4.5:1 on background AND
+// surface-sunken. Raw step-11 makes it for green/red; amber-11 was 4.50/4.20
+// and blue-11 4.65/4.34, so both are tuned darker while keeping their hue
+// (the amber stays amber — going darker via step-12 reads brown). Dark uses
+// the ramp 11s, which Radix designs for text on dark 1–3.
+export const STATUS_INKS: Record<"success" | "warning" | "info" | "destructive", { light: string; dark: string }> = {
+  success: { light: "#2a7e3b", dark: "#71d083" }, // grass-11 · 4.94 page / 4.61 wells
+  warning: { light: "#9d5c00", dark: "#ffca16" }, // tuned (amber-11 failed) · 5.17 / 4.83 — and 4.88 on the warning tint
+  info: { light: "#0c6ec3", dark: "#70b8ff" }, // tuned (blue-11 failed in wells) · 5.08 / 4.74
+  destructive: { light: "#ce2c31", dark: "#ff9592" }, // red-11 · 5.08 / 4.75
+}
 // Bright chromatic teal for NON-text moments only (mark, chart lines, active underlines, tints).
 export const BRAND_ACCENT = "#12a594"
 // Teal text ON the brand tint (brand-3) — the selection pair. Engineered like SOLIDS:
@@ -68,11 +81,23 @@ export const RADIUS = "0.625rem" // 10px — single knob driving the radius scal
 // mapped to nothing, so editing them changed nothing (false leverage). The grid is design
 // law (design-guidelines.md §Spacing), enforced by convention, not by a token.
 
-// Elevation — neutral low-opacity black. Level = semantic depth, never decoration.
-export const SHADOWS: Record<string, string> = {
-  raised: "0 1px 2px 0 rgb(0 0 0 / 0.04), 0 1px 3px 0 rgb(0 0 0 / 0.07)",
-  overlay: "0 4px 8px -2px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.06)",
-  modal: "0 16px 32px -8px rgb(0 0 0 / 0.18), 0 6px 12px -6px rgb(0 0 0 / 0.12)",
+// Elevation — neutral black, PER THEME (ruling 2026-07-21): the light values are
+// invisible on dark surfaces, collapsing the raised/overlay/modal hierarchy at night.
+// Dark uses deeper opacities; the light rim overlays already carry (ring-foreground/10,
+// which flips to a pale ring in dark) does the edge work. Level = semantic depth, never decoration.
+export const SHADOWS: Record<string, { light: string; dark: string }> = {
+  raised: {
+    light: "0 1px 2px 0 rgb(0 0 0 / 0.04), 0 1px 3px 0 rgb(0 0 0 / 0.07)",
+    dark: "0 1px 2px 0 rgb(0 0 0 / 0.30), 0 1px 3px 0 rgb(0 0 0 / 0.40)",
+  },
+  overlay: {
+    light: "0 4px 8px -2px rgb(0 0 0 / 0.10), 0 2px 4px -2px rgb(0 0 0 / 0.06)",
+    dark: "0 4px 8px -2px rgb(0 0 0 / 0.45), 0 2px 4px -2px rgb(0 0 0 / 0.35)",
+  },
+  modal: {
+    light: "0 16px 32px -8px rgb(0 0 0 / 0.18), 0 6px 12px -6px rgb(0 0 0 / 0.12)",
+    dark: "0 16px 32px -8px rgb(0 0 0 / 0.60), 0 6px 12px -6px rgb(0 0 0 / 0.45)",
+  },
 }
 
 // Type scale — major third (1.250), base 16, rounded to even, 25→24 locked.
@@ -104,15 +129,24 @@ export const SEMANTIC_REFS: Record<string, string> = {
   "surface-raised": "var(--neutral-1)", // card / small box — lifted by border + shadow, not fill
   // surface-sunken is a TUNED value (between neutral-2 and 3) — see SURFACE_SUNKEN below. It separates
   // on a white card on its own (no border) without reading as heavy as neutral-3. Emitted per-theme.
-  track: "var(--neutral-4)", // recessed control tracks (tabs list, progress, slider) — a white/teal active must pop
+  // Ruling 2026-07-21 (grey ladder): track moves 4→5 so step 4 is freed for
+  // interaction. The full monotone fill ladder: sunken (tuned wash) → accent (3,
+  // hover) → accent-strong (4, engaged) → track (5, recessed) → borders (5/7).
+  track: "var(--neutral-5)", // recessed control tracks (tabs list, progress, slider) — a white/teal active must pop
 
   primary: "var(--brand-solid)",
   secondary: "var(--neutral-3)",
-  "secondary-foreground": "var(--neutral-11)",
+  // Full-strength label (ruling 2026-07-21): neutral-11 is the MUTED text colour,
+  // and a grey fill + muted label reads as disabled. Soft buttons keep crisp text.
+  "secondary-foreground": "var(--neutral-12)",
   muted: "var(--neutral-2)",
   "muted-foreground": "var(--neutral-11)",
-  accent: "var(--neutral-3)", // interaction highlight (hover/selected) — light & calm; interactive greys stay LIGHTER than structural (track/sunken)
+  accent: "var(--neutral-3)", // interaction highlight (hover of white/transparent controls)
   "accent-foreground": "var(--neutral-12)",
+  // One step past accent: hover for controls that REST on grey (secondary buttons),
+  // pressed toggles, expanded triggers. Fixes the invisible secondary-button hover
+  // (secondary and accent are both neutral-3, so hover-to-accent changed nothing).
+  "accent-strong": "var(--neutral-4)",
 
   destructive: "var(--destructive-solid)",
   success: "var(--success-solid)",
@@ -120,14 +154,29 @@ export const SEMANTIC_REFS: Record<string, string> = {
   warning: "var(--warning-9)",
   "warning-foreground": WARNING_FOREGROUND,
 
+  // ONE ink per hue (ruling 2026-07-21): tint text aliases the hue's engineered ink,
+  // so chips, callouts and inline status text share a single colour. Before this,
+  // info/warning chips used heavy step-12 (navy/brown) while success/destructive
+  // used vivid 11s — four pills, two different chroma registers. The tuned inks
+  // clear AA on the tints too (warning 4.88, info 4.66 — gate-proven).
   "success-muted": "var(--success-3)",
-  "success-muted-foreground": "var(--success-11)",
+  "success-muted-foreground": "var(--success-ink)",
   "warning-muted": "var(--warning-3)",
-  "warning-muted-foreground": "var(--warning-12)", // step-11 = 4.25:1 on the tint (fails); step-12 clears AA
+  "warning-muted-foreground": "var(--warning-ink)",
   "info-muted": "var(--info-3)",
-  "info-muted-foreground": "var(--info-12)", // step-11 = 4.25:1 on the tint (fails); step-12 clears AA
+  "info-muted-foreground": "var(--info-ink)",
   "destructive-muted": "var(--destructive-3)", // scrutiny flags / removable filter chips — completes the muted-status set
-  "destructive-muted-foreground": "var(--destructive-11)", // 4.54:1 light / 7.75:1 dark — step-11 clears (unlike warning/info)
+  "destructive-muted-foreground": "var(--destructive-ink)",
+
+  // Status inks are Tier-1 engineered primitives (STATUS_INKS above), exposed
+  // via UTILITY_PRIMITIVES — see the three-treatments rule in design-guidelines
+  // §Colour: solid = fill, muted pair = tint, ink = text/icons on neutral.
+
+  // Brand tint pair — identity tiles (avatar monograms, icon chips) and anything
+  // brand-tinted that carries text. Same engineered pair as sidebar selection;
+  // named so components stop hand-mixing bg-primary/10 (backdrop-dependent contrast).
+  "brand-muted": "var(--brand-3)",
+  "brand-muted-foreground": "var(--brand-tint-foreground)",
 
   // Machine-prefilled, human-unverified field fill (ruling 2026-07-21, DECISIONS.md):
   // the amber stays, snapped to warning-2. FILL ONLY — the field border stays `input`
@@ -162,7 +211,14 @@ export const SEMANTIC_REFS: Record<string, string> = {
 // from it and gate.ts asserts globals.css agrees. Never hand-append a primitive
 // to a mapping list in a generator again: `surface-sunken` was silently missing
 // from the registry because "brand-accent" was hand-appended and it wasn't.
-export const UTILITY_PRIMITIVES = ["brand-accent", "surface-sunken"] as const
+export const UTILITY_PRIMITIVES = [
+  "brand-accent",
+  "surface-sunken",
+  "success-ink",
+  "warning-ink",
+  "info-ink",
+  "destructive-ink",
+] as const
 
 // Foregrounds that flip white (light) → ink (dark). Only these need a .dark override;
 // everything else auto-flips because the primitive step vars are redefined in .dark.

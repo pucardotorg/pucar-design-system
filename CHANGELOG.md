@@ -4,6 +4,43 @@ All user-visible changes to the Pucar · ON Court design system. Newest first.
 
 ## 2026-07-21
 
+### Changed (grey refinement II, same day)
+- **Command input**: transparent with bottom hairline (Spotlight pattern) — the `bg-input/30` grey slab is gone; focus tints the underline teal.
+- **Secondary button**: fill-only (border removed — that's outline's job) with a full-strength label (`secondary-foreground` → neutral-12). No longer confusable with disabled.
+- **Pressed/selected toggles carry the brand tint** (`brand-muted` pair) instead of grey — chosen ≠ hovered ≠ disabled.
+- **One ink per hue**: all `*-muted-foreground` tokens alias the engineered inks — info/warning chips drop navy/brown step-12 for vivid AA amber/blue, matching success/destructive.
+
+### Added (colour-refinement release, same day)
+- **Status inks** — `success-ink` / `warning-ink` / `info-ink` / `destructive-ink`: engineered per-theme text/icon colours for status on neutral surfaces, AA-proven on the page AND inside wells (warning and info are tuned; raw ambers/blues missed). The rule: solid = fill, tint = chips/callouts, ink = text. Solids are never text colours.
+- **`brand-muted` / `brand-muted-foreground`** — the engineered brand-tint pair as a public token (identity tiles, monograms); replaces every hand-mixed `bg-primary/10`.
+- **`accent-strong`** — interactive grey one step past `accent` (hover on grey-rest controls, pressed toggles, expanded triggers). `track` moves neutral-4 → neutral-5. New law: interaction always moves one step down the ladder.
+- **Foundations lab**: "Status — three treatments per hue" panel; audit grows to 31 live pairs; grey ladder display updated.
+
+### Changed (colour-refinement release)
+- **Alpha status/brand fills are banned** (focus rings, shadows, and read-through washes exempt) — every tint that carries text is an opaque gate-verified pair. Refitted: button `destructive` (now tint at rest, ESCALATES to the solid pair on hover), `destructive-ghost`, dropdown/menubar destructive items, badge link-hovers, avatar/icon tiles across all screens.
+- **Primary button hover was below AA** — `bg-primary/90` composited to 4.12:1 in light; now an in-hue color-mix darken like every other solid.
+- **Secondary button hover was invisible** (`secondary` == `accent` == neutral-3); now hovers to `accent-strong`. Toggle hover/pressed were both `muted`; now `accent` / `accent-strong`.
+- **Alert destructive** drops the red-wall description (`text-destructive/90` alpha ink) — title+icon carry the status ink, description is muted.
+- **Type tokens everywhere in primitives** — 77 raw `text-sm/xs/base/[0.8rem]` swapped for `text-body-compact`/`text-caption`/`text-body` (identical metrics; captions gain the law's 500 floor).
+
+### Fixed (colour-refinement release)
+- **Registry never emitted `--brand-tint-foreground`** — consumer apps installing pucar-theme got `var(undefined)` for sidebar selection text. Now emitted per theme.
+- **Calendar month-dropdown hydration mismatch** — server/client ICU disagree on short month names ("Sep"/"Sept"); fixed month list is deterministic.
+
+### Added (later the same day — shape & metrics release)
+- **Foundations page (`/foundations`)** — a live token laboratory: 22 regulated contrast pairs measured off the rendered browser (re-measures on theme flip), ramp swatches with resolved hex, surface/type/radius/elevation/spacing references, interaction-state proofs.
+- **Gallery coverage 11 → 25 sections** — accordion, alert-dialog, calendar, charts, collapsible, command, drawer, input-group, input-otp, menubar, navigation-menu, scroll-area, separator, toggle, toggle-group; all with court-shaped content.
+- **Mobile navigation** — the sidebar now collapses to a sheet drawer below `md` (design-guidelines §3 finally implemented); header actions collapse without overflow at 375.
+- **Shape & metrics law** (design-guidelines §Control metrics, DECISIONS 2026-07-21): control default 40px; radius by role (container xl · control lg · inset md/sm · chip full); container padding 24; micro-spacing addendum (2/6/10 legal only inside a control).
+
+### Changed (shape & metrics release)
+- **One chip: `status-pill` is merged into `badge`** *(breaking)* — Badge is now 24px, pill-shaped, caption type, with `success/warning/info` variants added and `destructive` moved from the alpha fill (4.44:1 on `accent` — an AA failure) to the opaque `destructive-muted` pair (constant 4.54 light / 7.75 dark). `status-pill` is deleted from the registry; map `tone` → `variant` (ready→success, waiting→warning, urgent→destructive).
+- **Elevation is per-theme** — `SHADOWS` now carries light/dark values via `--elevation-*` indirection; dark uses deeper ink so raised/overlay/modal stop collapsing on dark surfaces.
+- **Control heights normalized to the 40px default** — input-group 32→40, OTP slots 32→40 (mono, 16px digits), command input 32→40, tabs track 36→40; card padding 20→24 (`sm` 12→16), dialog/sheet/drawer/alert-dialog padding 16→24; card/overlay body text no longer forced to 14px; checkbox radius derives from the knob.
+
+### Fixed (shape & metrics release)
+- **`cn()` silently dropped custom type tokens** — tailwind-merge didn't know the Pucar type scale, classified `text-caption` as a colour, and let any later colour utility erase it. `lib/utils.ts` now extends the merge config with the full scale.
+
 ### Added
 - **`prefilled` token** — the fill for machine-read, human-unverified field values (amber, snapped to `warning-2`; fill only, border stays `input` for the 3:1 boundary). `Input` now styles `data-prefilled="true"`; focus lifts the tint. Decided against a new hue (DECISIONS.md 2026-07-21).
 - **`destructive-muted` / `destructive-muted-foreground`** — completes the muted-status set (success/warning/info already existed); needed for scrutiny flags and removable filter chips. Step-11 foreground clears AA in both themes.

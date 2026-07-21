@@ -14,6 +14,7 @@ import {
   BRAND_TINT_FOREGROUND,
   SOLID_FOREGROUND,
   SURFACE_SUNKEN,
+  STATUS_INKS,
   SEMANTIC_REFS,
   SOLID_FOREGROUND_TOKENS,
   UTILITY_PRIMITIVES,
@@ -44,6 +45,7 @@ function primitives(theme: Theme): Record<string, string> {
   o["brand-accent"] = BRAND_ACCENT
   o["brand-tint-foreground"] = BRAND_TINT_FOREGROUND[theme] // engineered teal text on brand-3
   o["surface-sunken"] = SURFACE_SUNKEN[theme] // tuned per-theme nested-surface fill
+  for (const [hue, ink] of Object.entries(STATUS_INKS)) o[`${hue}-ink`] = ink[theme]
   CHART_PALETTE[theme].forEach((hex, i) => (o[`chart-${i + 1}`] = hex))
   return o
 }
@@ -81,6 +83,18 @@ const PAIRS: Array<[fg: string, bg: string, min: number, note?: string]> = [
   ["warning-muted-foreground", "warning-muted", 4.5, "status chips"],
   ["info-muted-foreground", "info-muted", 4.5, "status chips"],
   ["destructive-muted-foreground", "destructive-muted", 4.5, "scrutiny flags / filter chips"],
+  ["accent-foreground", "accent-strong", 4.5, "pressed toggles / hover on grey-rest controls"],
+  ["muted-foreground", "accent-strong", 4.5, "secondary text survives the engaged state"],
+  ["brand-muted-foreground", "brand-muted", 4.5, "identity tiles / brand-tinted chips"],
+  ["success-ink", "background", 4.5, "status ink on the page"],
+  ["warning-ink", "background", 4.5, "status ink on the page (amber-11, not brown-12)"],
+  ["info-ink", "background", 4.5, "status ink on the page"],
+  ["destructive-ink", "background", 4.5, "status ink on the page — error text, deltas"],
+  ["success-ink", "surface-sunken", 4.5, "status ink inside wells"],
+  ["warning-ink", "surface-sunken", 4.5, "tuned — raw amber-11 was 4.20 here"],
+  ["info-ink", "surface-sunken", 4.5, "tuned — raw blue-11 was 4.34 here"],
+  ["destructive-ink", "surface-sunken", 4.5, "error text inside wells"],
+  ["destructive-ink", "destructive-muted", 4.5, "soft destructive button label"],
   ["foreground", "prefilled", 4.5, "typed value in a machine-prefilled field"],
   ["muted-foreground", "prefilled", 4.5, "hint/placeholder text in a prefilled field"],
   ["sidebar-foreground", "sidebar", 4.5],

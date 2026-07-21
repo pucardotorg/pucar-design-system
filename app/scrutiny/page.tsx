@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 import { Popover, PopoverContent } from "@/components/ui/popover"
 import { Switch } from "@/components/ui/switch"
-import { StatusPill } from "@/components/status-pill"
+import { Badge } from "@/components/ui/badge"
 
 import { DocumentRail } from "./document-rail"
 import { DocumentViewer } from "./document-viewer"
@@ -64,9 +64,9 @@ export default function ScrutinyPage() {
             <h1 className="truncate text-[17px] leading-6 font-semibold">
               CMP/1043/2026 · Om Kumar v. Rakesh Sharma
             </h1>
-            <StatusPill tone="waiting" className="shrink-0">
+            <Badge variant="warning" className="shrink-0">
               Flag skipped at filing
-            </StatusPill>
+            </Badge>
           </div>
           <p className="truncate text-caption text-muted-foreground">
             Complaint under S.138, Negotiable Instruments Act · Filed by Adv. Priya Nair
@@ -84,7 +84,7 @@ export default function ScrutinyPage() {
       </header>
 
       {!s.ai && (
-        <div className="flex shrink-0 items-center gap-2.5 border-b bg-info-muted px-5 py-2.5 text-body-compact text-info-muted-foreground">
+        <div className="flex shrink-0 items-center gap-2.5 border-b bg-info-muted px-4 py-2.5 text-body-compact text-info-muted-foreground">
           <InfoIcon className="size-4 shrink-0" />
           AI assistance is unavailable for this file. All checks are manual — documents are grouped by
           filing section.

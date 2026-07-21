@@ -62,9 +62,9 @@ export default function TestUIPage() {
           <Link
             key={test.href}
             href={test.href}
-            className="group flex items-start gap-4 rounded-xl border bg-card p-5 transition-colors hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
+            className="group flex items-start gap-4 rounded-xl border bg-card p-6 transition-colors hover:bg-accent focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none"
           >
-            <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+            <div className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-muted text-brand-muted-foreground">
               <test.icon className="size-5" />
             </div>
             <div className="min-w-0 flex-1">

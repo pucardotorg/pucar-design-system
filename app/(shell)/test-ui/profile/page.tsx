@@ -109,7 +109,7 @@ export default function ProfileTestPage() {
 
       <div className="rounded-xl border bg-card p-6">
         <div className="flex items-center gap-3">
-          <div className="flex size-10 items-center justify-center rounded-lg bg-primary/10 text-primary">
+          <div className="flex size-10 items-center justify-center rounded-lg bg-brand-muted text-brand-muted-foreground">
             <UserRoundIcon className="size-5" />
           </div>
           <div className="min-w-0">
