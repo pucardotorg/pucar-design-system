@@ -31,6 +31,11 @@ export const SOLIDS: Record<"brand" | "success" | "info" | "destructive", { ligh
 export const WARNING_FOREGROUND = "#3d2000"
 // Bright chromatic teal for NON-text moments only (mark, chart lines, active underlines, tints).
 export const BRAND_ACCENT = "#12a594"
+// Teal text ON the brand tint (brand-3) — the selection pair. Engineered like SOLIDS:
+// light brand-11 is only 4.10:1 on brand-3 (fails AA), so light uses a darker tuned teal
+// (5.83:1); dark brand-11 already clears (8.07:1). Ruling 2026-07-21 (DECISIONS.md):
+// selection = persistent location = brand tint; hover = transient = grey accent.
+export const BRAND_TINT_FOREGROUND = { light: "#0a6969", dark: "#0bd8b6" }
 // Foreground on solids: white in light, near-black ink in dark.
 export const SOLID_FOREGROUND = { light: "#ffffff", dark: "#0a0a0a" }
 
@@ -121,6 +126,13 @@ export const SEMANTIC_REFS: Record<string, string> = {
   "warning-muted-foreground": "var(--warning-12)", // step-11 = 4.25:1 on the tint (fails); step-12 clears AA
   "info-muted": "var(--info-3)",
   "info-muted-foreground": "var(--info-12)", // step-11 = 4.25:1 on the tint (fails); step-12 clears AA
+  "destructive-muted": "var(--destructive-3)", // scrutiny flags / removable filter chips — completes the muted-status set
+  "destructive-muted-foreground": "var(--destructive-11)", // 4.54:1 light / 7.75:1 dark — step-11 clears (unlike warning/info)
+
+  // Machine-prefilled, human-unverified field fill (ruling 2026-07-21, DECISIONS.md):
+  // the amber stays, snapped to warning-2. FILL ONLY — the field border stays `input`
+  // (neutral-9) because no amber step passes the 3:1 boundary check without going brown.
+  prefilled: "var(--warning-2)",
 
   border: "var(--neutral-7)",
   input: "var(--neutral-9)", // field boundary needs 3:1 (WCAG 1.4.11); neutral-8 was 1.86:1
@@ -130,8 +142,10 @@ export const SEMANTIC_REFS: Record<string, string> = {
   sidebar: "var(--neutral-2)",
   "sidebar-foreground": "var(--neutral-12)",
   "sidebar-primary": "var(--brand-solid)",
-  "sidebar-accent": "var(--neutral-3)",
-  "sidebar-accent-foreground": "var(--neutral-12)",
+  // Selection = persistent location = brand tint; hover = transient = grey accent
+  // (ruling 2026-07-21). The foreground is the engineered BRAND_TINT_FOREGROUND pair.
+  "sidebar-accent": "var(--brand-3)",
+  "sidebar-accent-foreground": "var(--brand-tint-foreground)",
   "sidebar-border": "var(--neutral-5)",
   "sidebar-ring": "var(--brand-solid)",
 

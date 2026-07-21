@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "calendar",
   "title": "Calendar",
-  "description": "Pucar-themed calendar (release 2026-07-06).",
+  "description": "Pucar-themed calendar (release 2026-07-21).",
   "dependencies": [
     "lucide-react",
     "react-day-picker"

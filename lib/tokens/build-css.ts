@@ -13,6 +13,7 @@ import {
   FAMILY_RAMP,
   SOLIDS,
   BRAND_ACCENT,
+  BRAND_TINT_FOREGROUND,
   SOLID_FOREGROUND,
   SURFACE_SUNKEN,
   SEMANTIC_REFS,
@@ -45,6 +46,7 @@ function primitiveLines(theme: Theme): string[] {
   out.push(`  --info-solid: ${SOLIDS.info[theme]};`)
   out.push(`  --destructive-solid: ${SOLIDS.destructive[theme]};`)
   out.push(`  --brand-accent: ${BRAND_ACCENT};`)
+  out.push(`  --brand-tint-foreground: ${BRAND_TINT_FOREGROUND[theme]};`) // engineered teal text on brand-3 (selection pair)
   out.push(`  --surface-sunken: ${SURFACE_SUNKEN[theme]};`) // tuned per-theme nested-surface fill (between neutral-2 and 3)
   CHART_PALETTE[theme].forEach((hex, i) => out.push(`  --chart-${i + 1}: ${hex};`))
   return out

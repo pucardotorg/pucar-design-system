@@ -2,6 +2,20 @@
 
 All user-visible changes to the Pucar · ON Court design system. Newest first.
 
+## 2026-07-21
+
+### Added
+- **`prefilled` token** — the fill for machine-read, human-unverified field values (amber, snapped to `warning-2`; fill only, border stays `input` for the 3:1 boundary). `Input` now styles `data-prefilled="true"`; focus lifts the tint. Decided against a new hue (DECISIONS.md 2026-07-21).
+- **`destructive-muted` / `destructive-muted-foreground`** — completes the muted-status set (success/warning/info already existed); needed for scrutiny flags and removable filter chips. Step-11 foreground clears AA in both themes.
+- **`description-list`** — semantic key–value rows (label muted left, value right, hairline dividers) for preview summaries, scrutiny field panels, and detail asides.
+- **`document-slot`** — the e-filing upload anatomy: filled (sunken well, thumbnail, quality pill), empty (dashed boundary, required mark / Optional chip, "+ Choose file"), processing.
+- **Gallery:** "Documents & provenance" section; prefilled-field example under the form pattern.
+
+### Changed
+- **Sidebar selection is now the brand tint** (`--sidebar-accent` → `brand-3`, foreground → engineered `--brand-tint-foreground`, 5.83:1 light / 8.07:1 dark). Ruling: selection = persistent location = brand tint; hover = transient = grey. Light `brand-11` failed AA on the tint (4.10:1), hence the engineered pair.
+- **Neutral temperature ruled: cool stays** (`NEUTRAL = "slate"`), after a side-by-side warm/cool port of the upload screen. "Clinical, instrument."
+- Gate grows three pairs (prefilled ×2, destructive-muted) — now 23 pairs × 2 themes.
+
 ## 2026-07-06
 
 ### Added

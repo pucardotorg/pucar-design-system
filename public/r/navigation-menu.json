@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "navigation-menu",
   "title": "Navigation menu",
-  "description": "Pucar-themed navigation menu (release 2026-07-06).",
+  "description": "Pucar-themed navigation menu (release 2026-07-21).",
   "dependencies": [
     "class-variance-authority",
     "lucide-react",

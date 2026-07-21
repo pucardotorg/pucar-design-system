@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "separator",
   "title": "Separator",
-  "description": "Pucar-themed separator (release 2026-07-06).",
+  "description": "Pucar-themed separator (release 2026-07-21).",
   "dependencies": [
     "radix-ui"
   ],

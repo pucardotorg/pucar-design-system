@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "description-list",
+  "title": "Description list",
+  "description": "Pucar-themed description list (release 2026-07-21).",
+  "registryDependencies": [
+    "https://pucar-ui.vercel.app/r/pucar-theme.json"
+  ],
+  "files": [
+    {
+      "path": "components/ui/description-list.tsx",
+      "content": "import * as React from \"react\"\n\nimport { cn } from \"@/lib/utils\"\n\n// Key–value rows — the recurring \"label left, value right\" anatomy of preview\n// summaries, scrutiny field panels, and detail asides (screen-craft §2 detail\n// scaffold). Semantic <dl>: term muted in a fixed column, detail in `body`,\n// hairline between rows. Use this instead of hand-rolled two-column divs so\n// every consumer gets the same rhythm — and screen readers get real term/detail\n// pairs.\n//\n//   <DescriptionList>\n//     <DescriptionRow>\n//       <DescriptionTerm>Full name</DescriptionTerm>\n//       <DescriptionDetail>Prateek Agrawal</DescriptionDetail>\n//     </DescriptionRow>\n//   </DescriptionList>\n\nfunction DescriptionList({ className, ...props }: React.ComponentProps<\"dl\">) {\n  return (\n    <dl\n      data-slot=\"description-list\"\n      className={cn(\"divide-y divide-border\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction DescriptionRow({ className, ...props }: React.ComponentProps<\"div\">) {\n  return (\n    <div\n      data-slot=\"description-row\"\n      className={cn(\n        \"grid grid-cols-1 gap-1 py-3 sm:grid-cols-[minmax(8rem,14rem)_1fr] sm:gap-4\",\n        className\n      )}\n      {...props}\n    />\n  )\n}\n\n// The label — quiet, so the data reads first (design law §Information design).\nfunction DescriptionTerm({ className, ...props }: React.ComponentProps<\"dt\">) {\n  return (\n    <dt\n      data-slot=\"description-term\"\n      className={cn(\"text-body-compact text-muted-foreground\", className)}\n      {...props}\n    />\n  )\n}\n\nfunction DescriptionDetail({ className, ...props }: React.ComponentProps<\"dd\">) {\n  return (\n    <dd\n      data-slot=\"description-detail\"\n      className={cn(\"min-w-0 text-body\", className)}\n      {...props}\n    />\n  )\n}\n\nexport { DescriptionList, DescriptionRow, DescriptionTerm, DescriptionDetail }\n",
+      "type": "registry:ui"
+    }
+  ],
+  "type": "registry:ui"
+}

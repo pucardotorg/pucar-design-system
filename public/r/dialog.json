@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "dialog",
   "title": "Dialog",
-  "description": "Pucar-themed dialog (release 2026-07-06).",
+  "description": "Pucar-themed dialog (release 2026-07-21).",
   "dependencies": [
     "lucide-react",
     "radix-ui"

@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-group",
   "title": "Input group",
-  "description": "Pucar-themed input group (release 2026-07-06).",
+  "description": "Pucar-themed input group (release 2026-07-21).",
   "dependencies": [
     "class-variance-authority"
   ],

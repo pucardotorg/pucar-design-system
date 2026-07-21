@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "textarea",
   "title": "Textarea",
-  "description": "Pucar-themed textarea (release 2026-07-06).",
+  "description": "Pucar-themed textarea (release 2026-07-21).",
   "registryDependencies": [
     "https://pucar-ui.vercel.app/r/pucar-theme.json"
   ],

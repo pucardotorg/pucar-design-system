@@ -1,0 +1,54 @@
+# Design decisions log
+
+> Running capture of Abhiram's design rulings made during working sessions.
+> Nothing here is law yet. Entries are **ratified in batch review**, then land as
+> edits to `design-guidelines.md` (law) or `screen-craft.md` (craft) and are marked
+> accordingly. See CONTRIBUTING.md for the deferred-decisions counterpart
+> (things explicitly *not* decided).
+
+**Entry format** — every entry must carry the *why*, generalized beyond the screen
+that triggered it. A fix without a transferable rule doesn't belong here; just fix it.
+
+```
+## YYYY-MM-DD · short title
+- **Trigger:** which screen/component/review surfaced it
+- **Ruling:** what Abhiram decided, verbatim intent
+- **Generalized rule:** the transferable form ("never X", "prefer Y when Z")
+- **Rationale:** why — the sensibility behind it, stated so someone without Abhiram can apply it
+- **Status:** logged | ratified → design-guidelines.md §N | ratified → screen-craft.md §N | rejected (with reason)
+```
+
+---
+
+## 2026-07-21 · Prefilled-field colour stays amber
+- **Trigger:** two-way review of E-Filing + Scrutiny (REVIEW-two-designs.md §C2). Three treatments coexisted in the designs: amber tint, info-blue, teal.
+- **Ruling:** keep the yellow/amber fill on machine-prefilled text fields as-is; snap it to the nearest design-system colour (warning ramp) rather than minting a new hue.
+- **Generalized rule:** machine-read, human-unverified field values are marked with a warning-ramp tint (light warning fill + warning-mixed border), which clears once the user edits or verifies the value. One treatment everywhere — the info-blue and teal variants in the designs are to be replaced with this.
+- **Rationale:** Abhiram's call, favouring the existing look over a new semantic token. Counter-argument recorded at time of ruling: this overloads a status hue ("status colours mean status") and a heavily prefilled form may read as a form full of warnings; revisit if that materializes in testing. Exact token mapping to be fixed after the neutral-temperature ruling lands.
+- **Status:** logged
+
+## 2026-07-21 · Scrutiny's sub-12px type is a defect, not a tier
+- **Trigger:** scrutiny v10 runs on 11–13.5px type (REVIEW-two-designs.md §C3).
+- **Ruling:** the 12px floor stands. Port scrutiny at ladder sizes (12/14), earning density through padding and line-height; no "workbench" density tier is added.
+- **Generalized rule:** no screen — however dense or expert-facing — sets type below `caption` (12px) or off the ladder; full-viewport tools get their density from spacing and leading only.
+- **Rationale:** the existing law already anticipated this ("density earned in tables only… never by shrinking type"); the ladder-sized version was never actually attempted, so defection was unjustified. Revisit only with a rendered ladder-compliant port demonstrably failing.
+- **Status:** logged
+
+## 2026-07-21 · Nav/sidebar selection uses brand tint, hover stays grey
+- **Trigger:** wizard rail in E-Filing uses teal-tint fill + teal text for the active section; system token was calibrated grey (REVIEW-two-designs.md §C4).
+- **Ruling:** brand tint becomes the selection treatment: `--sidebar-accent` → brand tint, `--sidebar-accent-foreground` → brand-11 (or dark-mode equivalent).
+- **Generalized rule:** *selection* ("where you are" — persistent state) uses a brand tint; *hover* ("where you might go" — transient) stays on the calibrated grey `accent`. The two must remain visually distinct.
+- **Rationale:** extends the existing structural/interactive grey split with a third distinction: persistent location vs transient feedback. Law already permitted "accent or a brand tint"; this pins which is used when. Exact tint values to be fixed after the neutral-temperature ruling.
+- **Status:** logged
+
+## 2026-07-21 · Neutral temperature — cool stays
+- **Trigger:** designs are built on warm hue-83 "paper" neutrals; system ships cool Radix greys. Ruled after a side-by-side port of the upload screen (cool vs warm, light and dark).
+- **Ruling:** cool. "The cool side reads more clinical, more instrument" — that is the intended feel.
+- **Generalized rule:** the neutral ramp stays `slate` (`NEUTRAL` in tokens.ts). Warm/cream neutrals in any mockup are re-skinned to the system ramp on port; temperature is not a per-screen choice.
+- **Rationale:** the product should read as a precise public instrument, not as stationery. Lightness-matched comparison showed the delta lives in chrome (bars, card fills, borders); dark mode is nearly identical either way — so cool costs nothing at night and sets the register by day.
+- **Status:** logged
+
+## 2026-07-21 · Working agreements (not design law)
+- **Repo hygiene:** no new standalone .md files in the design system beyond the working set (design-guidelines, screen-craft, CONTRIBUTING, MAINTAINING, CHANGELOG, README, this log). Review artifacts live in the session, not the repo — REVIEW-two-designs.md moved out accordingly. Candidate consolidation for a future pass: fold GREY-AND-A11Y-PLAN.md's two open items into CONTRIBUTING § Deferred decisions and retire the file (needs Abhiram's yes).
+- **Prefill mapping (implements the amber ruling above):** fill = `warning-2` via a semantic `prefilled` token; border unchanged (`input`, neutral-9) because no amber step clears the 3:1 boundary without going brown. Focus lifts the tint; editing clears the marker.
+- **destructive-muted added** to complete the muted-status set (scrutiny flags need it) — follows the existing success/warning/info pattern, step-11 foreground clears AA in both themes. Flagged here because it's a palette addition made without a bespoke ruling; veto reverses it in one token.

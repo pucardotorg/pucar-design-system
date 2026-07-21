@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "input-otp",
   "title": "Input otp",
-  "description": "Pucar-themed input otp (release 2026-07-06).",
+  "description": "Pucar-themed input otp (release 2026-07-21).",
   "dependencies": [
     "input-otp",
     "lucide-react"

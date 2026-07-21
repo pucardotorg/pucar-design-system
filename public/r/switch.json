@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "switch",
   "title": "Switch",
-  "description": "Pucar-themed switch (release 2026-07-06).",
+  "description": "Pucar-themed switch (release 2026-07-21).",
   "dependencies": [
     "radix-ui"
   ],

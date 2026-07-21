@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "design-rules",
   "title": "Design rules (law + craft)",
-  "description": "The two files that govern designing with Pucar: design-guidelines.md (the law — teal rationing, sentence case, AA, colour semantics) and screen-craft.md (the craft — spacing ladder, scaffolds, hierarchy, UX patterns, states, review pass). Installed into the consumer repo root so humans and AI sessions there inherit the rules. Release 2026-07-06.",
+  "description": "The two files that govern designing with Pucar: design-guidelines.md (the law — teal rationing, sentence case, AA, colour semantics) and screen-craft.md (the craft — spacing ladder, scaffolds, hierarchy, UX patterns, states, review pass). Installed into the consumer repo root so humans and AI sessions there inherit the rules. Release 2026-07-21.",
   "files": [
     {
       "path": "design-guidelines.md",

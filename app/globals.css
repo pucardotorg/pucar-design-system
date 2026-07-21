@@ -55,6 +55,11 @@
   --color-warning-muted-foreground: var(--warning-muted-foreground);
   --color-info-muted: var(--info-muted);
   --color-info-muted-foreground: var(--info-muted-foreground);
+  --color-destructive-muted: var(--destructive-muted);
+  --color-destructive-muted-foreground: var(--destructive-muted-foreground);
+
+  /* Machine-prefilled, human-unverified field fill (see design-guidelines §Colour) */
+  --color-prefilled: var(--prefilled);
 
   /* Bright brand tint — non-text moments only */
   --color-brand-accent: var(--brand-accent);
@@ -206,6 +211,7 @@
   --info-solid: #0d74ce;
   --destructive-solid: #c1232a;
   --brand-accent: #12a594;
+  --brand-tint-foreground: #0a6969;
   --surface-sunken: #f4f4f7;
   --chart-1: #007E7E;
   --chart-2: #0d74ce;
@@ -241,14 +247,17 @@
   --warning-muted-foreground: var(--warning-12);
   --info-muted: var(--info-3);
   --info-muted-foreground: var(--info-12);
+  --destructive-muted: var(--destructive-3);
+  --destructive-muted-foreground: var(--destructive-11);
+  --prefilled: var(--warning-2);
   --border: var(--neutral-7);
   --input: var(--neutral-9);
   --ring: var(--brand-solid);
   --sidebar: var(--neutral-2);
   --sidebar-foreground: var(--neutral-12);
   --sidebar-primary: var(--brand-solid);
-  --sidebar-accent: var(--neutral-3);
-  --sidebar-accent-foreground: var(--neutral-12);
+  --sidebar-accent: var(--brand-3);
+  --sidebar-accent-foreground: var(--brand-tint-foreground);
   --sidebar-border: var(--neutral-5);
   --sidebar-ring: var(--brand-solid);
   --primary-foreground: #ffffff;
@@ -343,6 +352,7 @@
   --info-solid: #3b9eff;
   --destructive-solid: #ec5d5e;
   --brand-accent: #12a594;
+  --brand-tint-foreground: #0bd8b6;
   --surface-sunken: #1d1e21;
   --chart-1: #0eb39e;
   --chart-2: #3b9eff;

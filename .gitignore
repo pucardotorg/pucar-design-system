@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Cloud-session soft-delete staging (bridge cannot hard-delete)
+_to_delete/

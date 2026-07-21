@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "scroll-area",
   "title": "Scroll area",
-  "description": "Pucar-themed scroll area (release 2026-07-06).",
+  "description": "Pucar-themed scroll area (release 2026-07-21).",
   "dependencies": [
     "radix-ui"
   ],

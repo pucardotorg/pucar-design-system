@@ -11,6 +11,7 @@ import {
   FAMILY_RAMP,
   SOLIDS,
   BRAND_ACCENT,
+  BRAND_TINT_FOREGROUND,
   SOLID_FOREGROUND,
   SURFACE_SUNKEN,
   SEMANTIC_REFS,
@@ -41,6 +42,7 @@ function primitives(theme: Theme): Record<string, string> {
   o["info-solid"] = SOLIDS.info[theme]
   o["destructive-solid"] = SOLIDS.destructive[theme]
   o["brand-accent"] = BRAND_ACCENT
+  o["brand-tint-foreground"] = BRAND_TINT_FOREGROUND[theme] // engineered teal text on brand-3
   o["surface-sunken"] = SURFACE_SUNKEN[theme] // tuned per-theme nested-surface fill
   CHART_PALETTE[theme].forEach((hex, i) => (o[`chart-${i + 1}`] = hex))
   return o
@@ -78,6 +80,9 @@ const PAIRS: Array<[fg: string, bg: string, min: number, note?: string]> = [
   ["success-muted-foreground", "success-muted", 4.5, "status chips"],
   ["warning-muted-foreground", "warning-muted", 4.5, "status chips"],
   ["info-muted-foreground", "info-muted", 4.5, "status chips"],
+  ["destructive-muted-foreground", "destructive-muted", 4.5, "scrutiny flags / filter chips"],
+  ["foreground", "prefilled", 4.5, "typed value in a machine-prefilled field"],
+  ["muted-foreground", "prefilled", 4.5, "hint/placeholder text in a prefilled field"],
   ["sidebar-foreground", "sidebar", 4.5],
   ["sidebar-primary-foreground", "sidebar-primary", 4.5],
   ["sidebar-accent-foreground", "sidebar-accent", 4.5],

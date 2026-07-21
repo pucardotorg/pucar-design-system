@@ -7,7 +7,7 @@
       "name": "design-rules",
       "type": "registry:item",
       "title": "Design rules (law + craft)",
-      "description": "The two files that govern designing with Pucar: design-guidelines.md (the law — teal rationing, sentence case, AA, colour semantics) and screen-craft.md (the craft — spacing ladder, scaffolds, hierarchy, UX patterns, states, review pass). Installed into the consumer repo root so humans and AI sessions there inherit the rules. Release 2026-07-06.",
+      "description": "The two files that govern designing with Pucar: design-guidelines.md (the law — teal rationing, sentence case, AA, colour semantics) and screen-craft.md (the craft — spacing ladder, scaffolds, hierarchy, UX patterns, states, review pass). Installed into the consumer repo root so humans and AI sessions there inherit the rules. Release 2026-07-21.",
       "files": [
         {
           "path": "design-guidelines.md",
@@ -25,7 +25,7 @@
       "name": "pucar-theme",
       "type": "registry:style",
       "title": "Pucar theme",
-      "description": "Pucar · ON Court design tokens — colour, type, spacing, radius, elevation (light + dark, WCAG 2.2 AA). Ships the full @theme utility mappings (status colours, surfaces, type scale, shadows), so custom utilities work in consumer apps. Pulls in design-rules (guidelines + screen-craft) so the rules travel with the tokens. Release 2026-07-06.",
+      "description": "Pucar · ON Court design tokens — colour, type, spacing, radius, elevation (light + dark, WCAG 2.2 AA). Ships the full @theme utility mappings (status colours, surfaces, type scale, shadows), so custom utilities work in consumer apps. Pulls in design-rules (guidelines + screen-craft) so the rules travel with the tokens. Release 2026-07-21.",
       "cssVars": {
         "theme": {
           "color-background": "var(--background)",
@@ -55,6 +55,9 @@
           "color-warning-muted-foreground": "var(--warning-muted-foreground)",
           "color-info-muted": "var(--info-muted)",
           "color-info-muted-foreground": "var(--info-muted-foreground)",
+          "color-destructive-muted": "var(--destructive-muted)",
+          "color-destructive-muted-foreground": "var(--destructive-muted-foreground)",
+          "color-prefilled": "var(--prefilled)",
           "color-border": "var(--border)",
           "color-input": "var(--input)",
           "color-ring": "var(--ring)",
@@ -222,14 +225,17 @@
           "warning-muted-foreground": "var(--warning-12)",
           "info-muted": "var(--info-3)",
           "info-muted-foreground": "var(--info-12)",
+          "destructive-muted": "var(--destructive-3)",
+          "destructive-muted-foreground": "var(--destructive-11)",
+          "prefilled": "var(--warning-2)",
           "border": "var(--neutral-7)",
           "input": "var(--neutral-9)",
           "ring": "var(--brand-solid)",
           "sidebar": "var(--neutral-2)",
           "sidebar-foreground": "var(--neutral-12)",
           "sidebar-primary": "var(--brand-solid)",
-          "sidebar-accent": "var(--neutral-3)",
-          "sidebar-accent-foreground": "var(--neutral-12)",
+          "sidebar-accent": "var(--brand-3)",
+          "sidebar-accent-foreground": "var(--brand-tint-foreground)",
           "sidebar-border": "var(--neutral-5)",
           "sidebar-ring": "var(--brand-solid)",
           "primary-foreground": "#ffffff",
@@ -341,7 +347,7 @@
       "name": "accordion",
       "type": "registry:ui",
       "title": "Accordion",
-      "description": "Pucar-themed accordion (release 2026-07-06).",
+      "description": "Pucar-themed accordion (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/accordion.tsx",
@@ -360,7 +366,7 @@
       "name": "alert-dialog",
       "type": "registry:ui",
       "title": "Alert dialog",
-      "description": "Pucar-themed alert dialog (release 2026-07-06).",
+      "description": "Pucar-themed alert dialog (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/alert-dialog.tsx",
@@ -379,7 +385,7 @@
       "name": "alert",
       "type": "registry:ui",
       "title": "Alert",
-      "description": "Pucar-themed alert (release 2026-07-06).",
+      "description": "Pucar-themed alert (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/alert.tsx",
@@ -397,7 +403,7 @@
       "name": "avatar",
       "type": "registry:ui",
       "title": "Avatar",
-      "description": "Pucar-themed avatar (release 2026-07-06).",
+      "description": "Pucar-themed avatar (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/avatar.tsx",
@@ -415,7 +421,7 @@
       "name": "badge",
       "type": "registry:ui",
       "title": "Badge",
-      "description": "Pucar-themed badge (release 2026-07-06).",
+      "description": "Pucar-themed badge (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/badge.tsx",
@@ -434,7 +440,7 @@
       "name": "breadcrumb",
       "type": "registry:ui",
       "title": "Breadcrumb",
-      "description": "Pucar-themed breadcrumb (release 2026-07-06).",
+      "description": "Pucar-themed breadcrumb (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/breadcrumb.tsx",
@@ -453,7 +459,7 @@
       "name": "button-group",
       "type": "registry:ui",
       "title": "Button group",
-      "description": "Pucar-themed button group (release 2026-07-06).",
+      "description": "Pucar-themed button group (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/button-group.tsx",
@@ -472,7 +478,7 @@
       "name": "button",
       "type": "registry:ui",
       "title": "Button",
-      "description": "Pucar-themed button (release 2026-07-06).",
+      "description": "Pucar-themed button (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/button.tsx",
@@ -491,7 +497,7 @@
       "name": "calendar",
       "type": "registry:ui",
       "title": "Calendar",
-      "description": "Pucar-themed calendar (release 2026-07-06).",
+      "description": "Pucar-themed calendar (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/calendar.tsx",
@@ -511,7 +517,7 @@
       "name": "card",
       "type": "registry:ui",
       "title": "Card",
-      "description": "Pucar-themed card (release 2026-07-06).",
+      "description": "Pucar-themed card (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/card.tsx",
@@ -526,7 +532,7 @@
       "name": "chart",
       "type": "registry:ui",
       "title": "Chart",
-      "description": "Pucar-themed chart (release 2026-07-06).",
+      "description": "Pucar-themed chart (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/chart.tsx",
@@ -544,7 +550,7 @@
       "name": "checkbox",
       "type": "registry:ui",
       "title": "Checkbox",
-      "description": "Pucar-themed checkbox (release 2026-07-06).",
+      "description": "Pucar-themed checkbox (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/checkbox.tsx",
@@ -563,7 +569,7 @@
       "name": "collapsible",
       "type": "registry:ui",
       "title": "Collapsible",
-      "description": "Pucar-themed collapsible (release 2026-07-06).",
+      "description": "Pucar-themed collapsible (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/collapsible.tsx",
@@ -581,7 +587,7 @@
       "name": "command",
       "type": "registry:ui",
       "title": "Command",
-      "description": "Pucar-themed command (release 2026-07-06).",
+      "description": "Pucar-themed command (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/command.tsx",
@@ -599,10 +605,25 @@
       ]
     },
     {
+      "name": "description-list",
+      "type": "registry:ui",
+      "title": "Description list",
+      "description": "Pucar-themed description list (release 2026-07-21).",
+      "files": [
+        {
+          "path": "components/ui/description-list.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "registryDependencies": [
+        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+      ]
+    },
+    {
       "name": "dialog",
       "type": "registry:ui",
       "title": "Dialog",
-      "description": "Pucar-themed dialog (release 2026-07-06).",
+      "description": "Pucar-themed dialog (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/dialog.tsx",
@@ -619,10 +640,28 @@
       ]
     },
     {
+      "name": "document-slot",
+      "type": "registry:ui",
+      "title": "Document slot",
+      "description": "Pucar-themed document slot (release 2026-07-21).",
+      "files": [
+        {
+          "path": "components/ui/document-slot.tsx",
+          "type": "registry:ui"
+        }
+      ],
+      "dependencies": [
+        "class-variance-authority"
+      ],
+      "registryDependencies": [
+        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+      ]
+    },
+    {
       "name": "drawer",
       "type": "registry:ui",
       "title": "Drawer",
-      "description": "Pucar-themed drawer (release 2026-07-06).",
+      "description": "Pucar-themed drawer (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/drawer.tsx",
@@ -640,7 +679,7 @@
       "name": "dropdown-menu",
       "type": "registry:ui",
       "title": "Dropdown menu",
-      "description": "Pucar-themed dropdown menu (release 2026-07-06).",
+      "description": "Pucar-themed dropdown menu (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/dropdown-menu.tsx",
@@ -659,7 +698,7 @@
       "name": "empty",
       "type": "registry:ui",
       "title": "Empty",
-      "description": "Pucar-themed empty (release 2026-07-06).",
+      "description": "Pucar-themed empty (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/empty.tsx",
@@ -677,7 +716,7 @@
       "name": "field",
       "type": "registry:ui",
       "title": "Field",
-      "description": "Pucar-themed field (release 2026-07-06).",
+      "description": "Pucar-themed field (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/field.tsx",
@@ -697,7 +736,7 @@
       "name": "hover-card",
       "type": "registry:ui",
       "title": "Hover card",
-      "description": "Pucar-themed hover card (release 2026-07-06).",
+      "description": "Pucar-themed hover card (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/hover-card.tsx",
@@ -715,7 +754,7 @@
       "name": "input-group",
       "type": "registry:ui",
       "title": "Input group",
-      "description": "Pucar-themed input group (release 2026-07-06).",
+      "description": "Pucar-themed input group (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/input-group.tsx",
@@ -736,7 +775,7 @@
       "name": "input-otp",
       "type": "registry:ui",
       "title": "Input otp",
-      "description": "Pucar-themed input otp (release 2026-07-06).",
+      "description": "Pucar-themed input otp (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/input-otp.tsx",
@@ -755,7 +794,7 @@
       "name": "input",
       "type": "registry:ui",
       "title": "Input",
-      "description": "Pucar-themed input (release 2026-07-06).",
+      "description": "Pucar-themed input (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/input.tsx",
@@ -770,7 +809,7 @@
       "name": "label",
       "type": "registry:ui",
       "title": "Label",
-      "description": "Pucar-themed label (release 2026-07-06).",
+      "description": "Pucar-themed label (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/label.tsx",
@@ -788,7 +827,7 @@
       "name": "menubar",
       "type": "registry:ui",
       "title": "Menubar",
-      "description": "Pucar-themed menubar (release 2026-07-06).",
+      "description": "Pucar-themed menubar (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/menubar.tsx",
@@ -807,7 +846,7 @@
       "name": "navigation-menu",
       "type": "registry:ui",
       "title": "Navigation menu",
-      "description": "Pucar-themed navigation menu (release 2026-07-06).",
+      "description": "Pucar-themed navigation menu (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/navigation-menu.tsx",
@@ -827,7 +866,7 @@
       "name": "pagination",
       "type": "registry:ui",
       "title": "Pagination",
-      "description": "Pucar-themed pagination (release 2026-07-06).",
+      "description": "Pucar-themed pagination (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/pagination.tsx",
@@ -846,7 +885,7 @@
       "name": "popover",
       "type": "registry:ui",
       "title": "Popover",
-      "description": "Pucar-themed popover (release 2026-07-06).",
+      "description": "Pucar-themed popover (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/popover.tsx",
@@ -864,7 +903,7 @@
       "name": "progress",
       "type": "registry:ui",
       "title": "Progress",
-      "description": "Pucar-themed progress (release 2026-07-06).",
+      "description": "Pucar-themed progress (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/progress.tsx",
@@ -882,7 +921,7 @@
       "name": "radio-group",
       "type": "registry:ui",
       "title": "Radio group",
-      "description": "Pucar-themed radio group (release 2026-07-06).",
+      "description": "Pucar-themed radio group (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/radio-group.tsx",
@@ -900,7 +939,7 @@
       "name": "scroll-area",
       "type": "registry:ui",
       "title": "Scroll area",
-      "description": "Pucar-themed scroll area (release 2026-07-06).",
+      "description": "Pucar-themed scroll area (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/scroll-area.tsx",
@@ -918,7 +957,7 @@
       "name": "select",
       "type": "registry:ui",
       "title": "Select",
-      "description": "Pucar-themed select (release 2026-07-06).",
+      "description": "Pucar-themed select (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/select.tsx",
@@ -937,7 +976,7 @@
       "name": "separator",
       "type": "registry:ui",
       "title": "Separator",
-      "description": "Pucar-themed separator (release 2026-07-06).",
+      "description": "Pucar-themed separator (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/separator.tsx",
@@ -955,7 +994,7 @@
       "name": "sheet",
       "type": "registry:ui",
       "title": "Sheet",
-      "description": "Pucar-themed sheet (release 2026-07-06).",
+      "description": "Pucar-themed sheet (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/sheet.tsx",
@@ -975,7 +1014,7 @@
       "name": "sidebar",
       "type": "registry:ui",
       "title": "Sidebar",
-      "description": "Pucar-themed sidebar (release 2026-07-06).",
+      "description": "Pucar-themed sidebar (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/sidebar.tsx",
@@ -1002,7 +1041,7 @@
       "name": "skeleton",
       "type": "registry:ui",
       "title": "Skeleton",
-      "description": "Pucar-themed skeleton (release 2026-07-06).",
+      "description": "Pucar-themed skeleton (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/skeleton.tsx",
@@ -1017,7 +1056,7 @@
       "name": "slider",
       "type": "registry:ui",
       "title": "Slider",
-      "description": "Pucar-themed slider (release 2026-07-06).",
+      "description": "Pucar-themed slider (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/slider.tsx",
@@ -1035,7 +1074,7 @@
       "name": "sonner",
       "type": "registry:ui",
       "title": "Sonner",
-      "description": "Pucar-themed sonner (release 2026-07-06).",
+      "description": "Pucar-themed sonner (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/sonner.tsx",
@@ -1055,7 +1094,7 @@
       "name": "spinner",
       "type": "registry:ui",
       "title": "Spinner",
-      "description": "Pucar-themed spinner (release 2026-07-06).",
+      "description": "Pucar-themed spinner (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/spinner.tsx",
@@ -1073,7 +1112,7 @@
       "name": "switch",
       "type": "registry:ui",
       "title": "Switch",
-      "description": "Pucar-themed switch (release 2026-07-06).",
+      "description": "Pucar-themed switch (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/switch.tsx",
@@ -1091,7 +1130,7 @@
       "name": "table",
       "type": "registry:ui",
       "title": "Table",
-      "description": "Pucar-themed table (release 2026-07-06).",
+      "description": "Pucar-themed table (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/table.tsx",
@@ -1106,7 +1145,7 @@
       "name": "tabs",
       "type": "registry:ui",
       "title": "Tabs",
-      "description": "Pucar-themed tabs (release 2026-07-06).",
+      "description": "Pucar-themed tabs (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/tabs.tsx",
@@ -1125,7 +1164,7 @@
       "name": "textarea",
       "type": "registry:ui",
       "title": "Textarea",
-      "description": "Pucar-themed textarea (release 2026-07-06).",
+      "description": "Pucar-themed textarea (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/textarea.tsx",
@@ -1140,7 +1179,7 @@
       "name": "toggle-group",
       "type": "registry:ui",
       "title": "Toggle group",
-      "description": "Pucar-themed toggle group (release 2026-07-06).",
+      "description": "Pucar-themed toggle group (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/toggle-group.tsx",
@@ -1160,7 +1199,7 @@
       "name": "toggle",
       "type": "registry:ui",
       "title": "Toggle",
-      "description": "Pucar-themed toggle (release 2026-07-06).",
+      "description": "Pucar-themed toggle (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/toggle.tsx",
@@ -1179,7 +1218,7 @@
       "name": "tooltip",
       "type": "registry:ui",
       "title": "Tooltip",
-      "description": "Pucar-themed tooltip (release 2026-07-06).",
+      "description": "Pucar-themed tooltip (release 2026-07-21).",
       "files": [
         {
           "path": "components/ui/tooltip.tsx",

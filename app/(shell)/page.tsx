@@ -127,6 +127,21 @@ import {
   FieldLabel,
 } from "@/components/ui/field"
 import { Spinner } from "@/components/ui/spinner"
+import {
+  DescriptionList,
+  DescriptionRow,
+  DescriptionTerm,
+  DescriptionDetail,
+} from "@/components/ui/description-list"
+import {
+  DocumentSlot,
+  DocumentSlotActions,
+  DocumentSlotContent,
+  DocumentSlotMedia,
+  DocumentSlotMeta,
+  DocumentSlotRequired,
+  DocumentSlotTitle,
+} from "@/components/ui/document-slot"
 
 function Section({
   title,
@@ -401,7 +416,103 @@ export default function ComponentsGallery() {
             />
             <FieldError>Enter the amount exactly as written on the cheque.</FieldError>
           </Field>
+          <Field>
+            <FieldLabel htmlFor="f-cheque-date">Date on cheque</FieldLabel>
+            <Input
+              id="f-cheque-date"
+              data-prefilled="true"
+              defaultValue="15/03/2026"
+              className="tabular-nums"
+            />
+            <FieldDescription>
+              Read from your uploaded cheque — check it, then continue. Editing
+              clears the marker.
+            </FieldDescription>
+          </Field>
         </FieldGroup>
+      </Section>
+
+      <Section
+        title="Documents & provenance"
+        description="The e-filing upload grammar: one slot per expected document; filled slots are sunken wells, empty slots are dashed boundaries; quality verdicts pair icon + word. Key–value rows carry preview and scrutiny summaries."
+      >
+        <div className="grid gap-8 lg:grid-cols-2">
+          <div className="space-y-3">
+            <DocumentSlot variant="filled">
+              <DocumentSlotMedia>
+                <span className="absolute bottom-1 left-1 rounded-sm bg-foreground px-1 text-[9px] font-bold tracking-wide text-background">
+                  JPG
+                </span>
+              </DocumentSlotMedia>
+              <DocumentSlotContent>
+                <DocumentSlotTitle>Cheque (front side)</DocumentSlotTitle>
+                <DocumentSlotMeta className="truncate">
+                  Cheque-1.jpg · 2.1 MB
+                </DocumentSlotMeta>
+              </DocumentSlotContent>
+              <DocumentSlotActions>
+                <span className="inline-flex items-center gap-1 rounded-full bg-success-muted px-2.5 py-1 text-caption text-success-muted-foreground">
+                  <CheckIcon className="size-3" /> Good
+                </span>
+                <Button variant="ghost" size="sm" className="text-muted-foreground">
+                  Delete
+                </Button>
+              </DocumentSlotActions>
+            </DocumentSlot>
+            <DocumentSlot variant="empty" role="button" tabIndex={0}>
+              <DocumentSlotContent>
+                <DocumentSlotTitle>
+                  Cheque return memo <DocumentSlotRequired />
+                </DocumentSlotTitle>
+                <DocumentSlotMeta>
+                  The memo your bank issued when this cheque bounced.
+                </DocumentSlotMeta>
+              </DocumentSlotContent>
+              <DocumentSlotActions>
+                <Button variant="ghost" size="sm" className="text-primary">
+                  <PlusIcon /> Choose file
+                </Button>
+              </DocumentSlotActions>
+            </DocumentSlot>
+            <DocumentSlot variant="empty" role="button" tabIndex={0}>
+              <DocumentSlotContent>
+                <DocumentSlotTitle>
+                  Reply to the demand notice
+                  <Badge variant="outline">Optional</Badge>
+                </DocumentSlotTitle>
+                <DocumentSlotMeta>
+                  The accused&apos;s reply to the notice, if any.
+                </DocumentSlotMeta>
+              </DocumentSlotContent>
+              <DocumentSlotActions>
+                <Button variant="ghost" size="sm" className="text-primary">
+                  <PlusIcon /> Choose file
+                </Button>
+              </DocumentSlotActions>
+            </DocumentSlot>
+          </div>
+          <DescriptionList>
+            <DescriptionRow>
+              <DescriptionTerm>Full name</DescriptionTerm>
+              <DescriptionDetail>Prateek Agrawal</DescriptionDetail>
+            </DescriptionRow>
+            <DescriptionRow>
+              <DescriptionTerm>Cheque no. / date</DescriptionTerm>
+              <DescriptionDetail>
+                <span className="font-mono text-muted-foreground">004821</span> ·
+                15/03/2026
+              </DescriptionDetail>
+            </DescriptionRow>
+            <DescriptionRow>
+              <DescriptionTerm>Amount</DescriptionTerm>
+              <DescriptionDetail className="tabular-nums">₹50,25,000</DescriptionDetail>
+            </DescriptionRow>
+            <DescriptionRow>
+              <DescriptionTerm>Returned</DescriptionTerm>
+              <DescriptionDetail>05/04/2026 — Funds insufficient</DescriptionDetail>
+            </DescriptionRow>
+          </DescriptionList>
+        </div>
       </Section>
 
       <Section title="Data display" description="Table, avatars, progress, skeletons.">

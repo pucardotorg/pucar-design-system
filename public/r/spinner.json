@@ -2,7 +2,7 @@
   "$schema": "https://ui.shadcn.com/schema/registry-item.json",
   "name": "spinner",
   "title": "Spinner",
-  "description": "Pucar-themed spinner (release 2026-07-06).",
+  "description": "Pucar-themed spinner (release 2026-07-21).",
   "dependencies": [
     "lucide-react"
   ],
