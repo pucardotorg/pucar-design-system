@@ -77,7 +77,7 @@ function CommandInput({
       {/* Spotlight/cmdk pattern: the palette frame is the boundary — the input is
           transparent with a hairline below, never a boxed grey slab (bg-input/30
           was the FIELD-BOUNDARY colour doing fill work at 30% alpha). */}
-      <InputGroup className="h-12! rounded-none! border-0! bg-transparent! shadow-none! has-[[data-slot=input-group-control]:focus-visible]:ring-0! *:data-[slot=input-group-addon]:pl-3!">
+      <InputGroup className="h-12! rounded-none! border-0! bg-transparent! shadow-none! has-[[data-slot=input-group-control]:focus-visible]:ring-0! *:data-[slot=input-group-addon]:pl-3! in-data-[slot=popover-content]:h-10!">
         <CommandPrimitive.Input
           data-slot="command-input"
           className={cn(

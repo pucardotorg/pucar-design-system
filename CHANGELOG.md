@@ -16,6 +16,14 @@ changes get an entry in **Migrations** below, in the same PR.
 
 ## 2026-07-21
 
+### Changed (craft refinement pass, same day)
+- **Timeline remade** — the rail is continuous (item spacing lives inside the content column, so the connector always reaches the next dot); the current step's halo is actually visible (brand-accent ring, not the invisible brand-3); future dots use the control-boundary grey.
+- **Stepper remade** — one continuous connector per gap (no more mismatched half-lines with seams); progress line runs through completed steps into the current one; labels no longer wrap awkwardly.
+- **Session-timeout** — the countdown moved into a sunken well with title-scale tabular numerals: the one number that matters now anchors the dialog.
+- **Banner** — 3px status rule on the left (Carbon's anchor, colour-blind-friendly); actions render as underlined links in the banner's own ink (grey button hovers on tinted strips read as mud); demos carry icons (colour-alone fix).
+- **Command input** is palette-scale (48px) only in the palette — inside popovers (combobox, pickers) it is field-scale (40px).
+- **Filter-chip demo** — remove buttons at chip scale (12px icon, quiet at rest, honest 16px hit area) instead of lucide's 24px default stomping the label; kbd gets a keycap bottom edge.
+
 ### Added (mechanized law + eight components — Tracks 3 & 4, same day)
 - **Law-lint** (`pnpm lawlint`, in `pnpm tokens` + CI): six mechanical rules — bare `rounded`, raw `neutral-N`, raw Tailwind type sizes, arbitrary pixel type, alpha status/brand fills, off-ladder spacing — with a justified allowlist that fails when stale. Calibration itself caught and fixed 20+ live violations.
 - **Visual regression** (`pnpm test:visual`): Playwright screenshots of the gallery, foundations, and dashboard — light + dark × desktop + mobile — against committed baselines; CI job bootstraps linux baselines as an artifact on first run.

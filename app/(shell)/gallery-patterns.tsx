@@ -1,7 +1,15 @@
 "use client"
 
 import * as React from "react"
-import { CalendarClockIcon, CopyIcon, PencilIcon, Trash2Icon, XIcon } from "lucide-react"
+import {
+  CalendarClockIcon,
+  CalendarDaysIcon,
+  CopyIcon,
+  InfoIcon,
+  PencilIcon,
+  Trash2Icon,
+  XIcon,
+} from "lucide-react"
 
 import { Badge } from "@/components/ui/badge"
 import { Banner, BannerAction } from "@/components/ui/banner"
@@ -168,17 +176,17 @@ export function GalleryPatterns() {
       >
         <div className="space-y-3">
           <Banner variant="info">
+            <InfoIcon />
             <span>
               You are viewing this filing in <strong>read-only</strong> mode while
               scrutiny is in progress.
             </span>
           </Banner>
           <Banner variant="warning">
+            <CalendarDaysIcon />
             <span>Hearing adjourned — next date 14 August 2026.</span>
             <BannerAction>
-              <Button variant="ghost" size="sm">
-                View order
-              </Button>
+              <button type="button">View order</button>
             </BannerAction>
           </Banner>
         </div>
@@ -244,20 +252,32 @@ export function GalleryPatterns() {
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="outline">
               S.138
-              <button aria-label="Remove filter Section 138" className="ml-0.5 rounded-full hover:bg-accent-strong">
-                <XIcon />
+              <button
+                type="button"
+                aria-label="Remove filter Section 138"
+                className="-mr-1 ml-0.5 flex size-4 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent-strong hover:text-foreground"
+              >
+                <XIcon className="size-3" />
               </button>
             </Badge>
             <Badge variant="outline">
               JFCM-II Ernakulam
-              <button aria-label="Remove filter court JFCM-II Ernakulam" className="ml-0.5 rounded-full hover:bg-accent-strong">
-                <XIcon />
+              <button
+                type="button"
+                aria-label="Remove filter court JFCM-II Ernakulam"
+                className="-mr-1 ml-0.5 flex size-4 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent-strong hover:text-foreground"
+              >
+                <XIcon className="size-3" />
               </button>
             </Badge>
             <Badge variant="outline">
               Awaiting docs
-              <button aria-label="Remove filter awaiting documents" className="ml-0.5 rounded-full hover:bg-accent-strong">
-                <XIcon />
+              <button
+                type="button"
+                aria-label="Remove filter awaiting documents"
+                className="-mr-1 ml-0.5 flex size-4 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-accent-strong hover:text-foreground"
+              >
+                <XIcon className="size-3" />
               </button>
             </Badge>
             <Button variant="ghost" size="sm">

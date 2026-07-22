@@ -54,11 +54,16 @@ function SessionTimeoutDialog({
           </AlertDialogTitle>
           <AlertDialogDescription>{description}</AlertDialogDescription>
         </AlertDialogHeader>
-        {/* aria-live polite: announced without interrupting; visually the one number that matters */}
-        <p aria-live="polite" className="text-body">
-          Time remaining:{" "}
-          <span className="font-mono font-semibold tabular-nums">{clock}</span>
-        </p>
+        {/* The countdown IS the information — it gets the anchor: a sunken well,
+            caption label, and large tabular numerals. aria-live polite announces
+            without interrupting. */}
+        <div
+          aria-live="polite"
+          className="flex items-baseline justify-between rounded-lg bg-surface-sunken px-4 py-3"
+        >
+          <span className="text-caption text-muted-foreground">Time remaining</span>
+          <span className="font-mono text-title-s tabular-nums">{clock}</span>
+        </div>
         <AlertDialogFooter>
           <AlertDialogCancel onClick={onSignOut}>{signOutLabel}</AlertDialogCancel>
           {/* Staying signed in is the SAFE action — it gets the primary. */}
