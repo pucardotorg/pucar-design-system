@@ -9,10 +9,10 @@
     "react-day-picker"
   ],
   "registryDependencies": [
-    "https://pucar-ui.vercel.app/r/pucar-theme.json",
-    "https://pucar-ui.vercel.app/r/button.json",
-    "https://pucar-ui.vercel.app/r/calendar.json",
-    "https://pucar-ui.vercel.app/r/popover.json"
+    "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+    "https://pucar-design-system.vercel.app/r/button.json",
+    "https://pucar-design-system.vercel.app/r/calendar.json",
+    "https://pucar-design-system.vercel.app/r/popover.json"
   ],
   "files": [
     {

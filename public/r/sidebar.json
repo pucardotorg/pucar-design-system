@@ -9,14 +9,14 @@
     "radix-ui"
   ],
   "registryDependencies": [
-    "https://pucar-ui.vercel.app/r/pucar-theme.json",
-    "https://pucar-ui.vercel.app/r/button.json",
-    "https://pucar-ui.vercel.app/r/input.json",
-    "https://pucar-ui.vercel.app/r/separator.json",
-    "https://pucar-ui.vercel.app/r/sheet.json",
-    "https://pucar-ui.vercel.app/r/skeleton.json",
-    "https://pucar-ui.vercel.app/r/tooltip.json",
-    "https://pucar-ui.vercel.app/r/use-mobile.json"
+    "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+    "https://pucar-design-system.vercel.app/r/button.json",
+    "https://pucar-design-system.vercel.app/r/input.json",
+    "https://pucar-design-system.vercel.app/r/separator.json",
+    "https://pucar-design-system.vercel.app/r/sheet.json",
+    "https://pucar-design-system.vercel.app/r/skeleton.json",
+    "https://pucar-design-system.vercel.app/r/tooltip.json",
+    "https://pucar-design-system.vercel.app/r/use-mobile.json"
   ],
   "files": [
     {

@@ -4,7 +4,7 @@
   "title": "Description list",
   "description": "Pucar-themed description list (release 2026-07-21).",
   "registryDependencies": [
-    "https://pucar-ui.vercel.app/r/pucar-theme.json"
+    "https://pucar-design-system.vercel.app/r/pucar-theme.json"
   ],
   "files": [
     {

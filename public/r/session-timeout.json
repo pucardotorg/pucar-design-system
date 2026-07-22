@@ -7,8 +7,8 @@
     "lucide-react"
   ],
   "registryDependencies": [
-    "https://pucar-ui.vercel.app/r/pucar-theme.json",
-    "https://pucar-ui.vercel.app/r/alert-dialog.json"
+    "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+    "https://pucar-design-system.vercel.app/r/alert-dialog.json"
   ],
   "files": [
     {

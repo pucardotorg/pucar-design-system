@@ -4,7 +4,7 @@
   "title": "Input",
   "description": "Pucar-themed input (release 2026-07-21).",
   "registryDependencies": [
-    "https://pucar-ui.vercel.app/r/pucar-theme.json"
+    "https://pucar-design-system.vercel.app/r/pucar-theme.json"
   ],
   "files": [
     {

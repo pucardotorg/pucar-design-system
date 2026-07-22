@@ -4,17 +4,17 @@
   "title": "New case form",
   "description": "ON Court intake — sectioned multi-field complaint form. Expects to render inside site-shell.",
   "registryDependencies": [
-    "https://pucar-ui.vercel.app/r/pucar-theme.json",
-    "https://pucar-ui.vercel.app/r/card.json",
-    "https://pucar-ui.vercel.app/r/input.json",
-    "https://pucar-ui.vercel.app/r/select.json",
-    "https://pucar-ui.vercel.app/r/checkbox.json",
-    "https://pucar-ui.vercel.app/r/radio-group.json",
-    "https://pucar-ui.vercel.app/r/switch.json",
-    "https://pucar-ui.vercel.app/r/textarea.json",
-    "https://pucar-ui.vercel.app/r/separator.json",
-    "https://pucar-ui.vercel.app/r/button.json",
-    "https://pucar-ui.vercel.app/r/label.json"
+    "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+    "https://pucar-design-system.vercel.app/r/card.json",
+    "https://pucar-design-system.vercel.app/r/input.json",
+    "https://pucar-design-system.vercel.app/r/select.json",
+    "https://pucar-design-system.vercel.app/r/checkbox.json",
+    "https://pucar-design-system.vercel.app/r/radio-group.json",
+    "https://pucar-design-system.vercel.app/r/switch.json",
+    "https://pucar-design-system.vercel.app/r/textarea.json",
+    "https://pucar-design-system.vercel.app/r/separator.json",
+    "https://pucar-design-system.vercel.app/r/button.json",
+    "https://pucar-design-system.vercel.app/r/label.json"
   ],
   "files": [
     {

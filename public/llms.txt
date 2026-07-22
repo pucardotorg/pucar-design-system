@@ -33,7 +33,7 @@ accordion · alert · alert-dialog · avatar · badge · banner · breadcrumb ·
 - **new-case-form** (block) — ON Court intake — sectioned multi-field complaint form. Expects to render inside site-shell.
 
 ## Install (self-hosted shadcn registry)
-- Theme + utility mappings: `npx shadcn add https://pucar-ui.vercel.app/r/pucar-theme.json`
-- Any component, Pucar-themed (deps auto-resolve here): `npx shadcn add https://pucar-ui.vercel.app/r/<name>.json`
-- The law as files: `npx shadcn add https://pucar-ui.vercel.app/r/design-rules.json`
-- Live gallery: https://pucar-ui.vercel.app/ · measured token lab: https://pucar-ui.vercel.app/foundations
+- Theme + utility mappings: `npx shadcn add https://pucar-design-system.vercel.app/r/pucar-theme.json`
+- Any component, Pucar-themed (deps auto-resolve here): `npx shadcn add https://pucar-design-system.vercel.app/r/<name>.json`
+- The law as files: `npx shadcn add https://pucar-design-system.vercel.app/r/design-rules.json`
+- Live gallery: https://pucar-design-system.vercel.app/ · measured token lab: https://pucar-design-system.vercel.app/foundations

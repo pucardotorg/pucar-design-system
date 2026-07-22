@@ -1,7 +1,7 @@
 {
   "$schema": "https://ui.shadcn.com/schema/registry.json",
   "name": "pucar",
-  "homepage": "https://pucar-ui.vercel.app",
+  "homepage": "https://pucar-design-system.vercel.app",
   "version": "2026.07.21",
   "items": [
     {
@@ -377,7 +377,7 @@
         }
       },
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/design-rules.json"
+        "https://pucar-design-system.vercel.app/r/design-rules.json"
       ]
     },
     {
@@ -396,7 +396,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -414,8 +414,8 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json"
       ]
     },
     {
@@ -433,7 +433,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -451,7 +451,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -470,7 +470,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -488,7 +488,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -507,7 +507,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -525,8 +525,8 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/separator.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/separator.json"
       ]
     },
     {
@@ -545,7 +545,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -564,8 +564,8 @@
         "react-day-picker"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json"
       ]
     },
     {
@@ -580,7 +580,7 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -598,7 +598,7 @@
         "recharts"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -617,7 +617,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -635,7 +635,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -653,10 +653,10 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json",
-        "https://pucar-ui.vercel.app/r/command.json",
-        "https://pucar-ui.vercel.app/r/popover.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json",
+        "https://pucar-design-system.vercel.app/r/command.json",
+        "https://pucar-design-system.vercel.app/r/popover.json"
       ]
     },
     {
@@ -675,9 +675,9 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/dialog.json",
-        "https://pucar-ui.vercel.app/r/input-group.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/dialog.json",
+        "https://pucar-design-system.vercel.app/r/input-group.json"
       ]
     },
     {
@@ -696,7 +696,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -716,10 +716,10 @@
         "react-day-picker"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json",
-        "https://pucar-ui.vercel.app/r/calendar.json",
-        "https://pucar-ui.vercel.app/r/popover.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json",
+        "https://pucar-design-system.vercel.app/r/calendar.json",
+        "https://pucar-design-system.vercel.app/r/popover.json"
       ]
     },
     {
@@ -734,7 +734,7 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -753,8 +753,8 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json"
       ]
     },
     {
@@ -772,7 +772,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -790,7 +790,7 @@
         "vaul"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -809,7 +809,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -827,7 +827,7 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -845,9 +845,9 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/label.json",
-        "https://pucar-ui.vercel.app/r/separator.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/label.json",
+        "https://pucar-design-system.vercel.app/r/separator.json"
       ]
     },
     {
@@ -865,7 +865,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -883,10 +883,10 @@
         "class-variance-authority"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json",
-        "https://pucar-ui.vercel.app/r/input.json",
-        "https://pucar-ui.vercel.app/r/textarea.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json",
+        "https://pucar-design-system.vercel.app/r/input.json",
+        "https://pucar-design-system.vercel.app/r/textarea.json"
       ]
     },
     {
@@ -905,7 +905,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -920,7 +920,7 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -935,7 +935,7 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -953,7 +953,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -972,7 +972,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -992,7 +992,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1010,8 +1010,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json"
       ]
     },
     {
@@ -1029,7 +1029,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1047,7 +1047,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1065,7 +1065,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1083,7 +1083,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1102,7 +1102,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1120,7 +1120,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1138,8 +1138,8 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/alert-dialog.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/alert-dialog.json"
       ]
     },
     {
@@ -1158,8 +1158,8 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json"
       ]
     },
     {
@@ -1179,14 +1179,14 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json",
-        "https://pucar-ui.vercel.app/r/input.json",
-        "https://pucar-ui.vercel.app/r/separator.json",
-        "https://pucar-ui.vercel.app/r/sheet.json",
-        "https://pucar-ui.vercel.app/r/skeleton.json",
-        "https://pucar-ui.vercel.app/r/tooltip.json",
-        "https://pucar-ui.vercel.app/r/use-mobile.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json",
+        "https://pucar-design-system.vercel.app/r/input.json",
+        "https://pucar-design-system.vercel.app/r/separator.json",
+        "https://pucar-design-system.vercel.app/r/sheet.json",
+        "https://pucar-design-system.vercel.app/r/skeleton.json",
+        "https://pucar-design-system.vercel.app/r/tooltip.json",
+        "https://pucar-design-system.vercel.app/r/use-mobile.json"
       ]
     },
     {
@@ -1201,7 +1201,7 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1219,7 +1219,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1239,7 +1239,7 @@
         "sonner"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1257,7 +1257,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1275,7 +1275,7 @@
         "lucide-react"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1293,7 +1293,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1308,7 +1308,7 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1327,7 +1327,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1342,7 +1342,7 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1357,7 +1357,7 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1376,8 +1376,8 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/toggle.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/toggle.json"
       ]
     },
     {
@@ -1396,7 +1396,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1414,7 +1414,7 @@
         "radix-ui"
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json"
       ]
     },
     {
@@ -1448,9 +1448,9 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/button.json",
-        "https://pucar-ui.vercel.app/r/avatar.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/button.json",
+        "https://pucar-design-system.vercel.app/r/avatar.json"
       ]
     },
     {
@@ -1466,12 +1466,12 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/badge.json",
-        "https://pucar-ui.vercel.app/r/card.json",
-        "https://pucar-ui.vercel.app/r/table.json",
-        "https://pucar-ui.vercel.app/r/chart.json",
-        "https://pucar-ui.vercel.app/r/button.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/badge.json",
+        "https://pucar-design-system.vercel.app/r/card.json",
+        "https://pucar-design-system.vercel.app/r/table.json",
+        "https://pucar-design-system.vercel.app/r/chart.json",
+        "https://pucar-design-system.vercel.app/r/button.json"
       ]
     },
     {
@@ -1487,17 +1487,17 @@
         }
       ],
       "registryDependencies": [
-        "https://pucar-ui.vercel.app/r/pucar-theme.json",
-        "https://pucar-ui.vercel.app/r/card.json",
-        "https://pucar-ui.vercel.app/r/input.json",
-        "https://pucar-ui.vercel.app/r/select.json",
-        "https://pucar-ui.vercel.app/r/checkbox.json",
-        "https://pucar-ui.vercel.app/r/radio-group.json",
-        "https://pucar-ui.vercel.app/r/switch.json",
-        "https://pucar-ui.vercel.app/r/textarea.json",
-        "https://pucar-ui.vercel.app/r/separator.json",
-        "https://pucar-ui.vercel.app/r/button.json",
-        "https://pucar-ui.vercel.app/r/label.json"
+        "https://pucar-design-system.vercel.app/r/pucar-theme.json",
+        "https://pucar-design-system.vercel.app/r/card.json",
+        "https://pucar-design-system.vercel.app/r/input.json",
+        "https://pucar-design-system.vercel.app/r/select.json",
+        "https://pucar-design-system.vercel.app/r/checkbox.json",
+        "https://pucar-design-system.vercel.app/r/radio-group.json",
+        "https://pucar-design-system.vercel.app/r/switch.json",
+        "https://pucar-design-system.vercel.app/r/textarea.json",
+        "https://pucar-design-system.vercel.app/r/separator.json",
+        "https://pucar-design-system.vercel.app/r/button.json",
+        "https://pucar-design-system.vercel.app/r/label.json"
       ]
     }
   ]

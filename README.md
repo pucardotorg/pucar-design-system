@@ -6,23 +6,23 @@ Built on [shadcn/ui](https://ui.shadcn.com) + Tailwind v4 + Radix, with a single
 
 ## See it
 
-- **Component gallery** — every component rendered against the live tokens: [pucar-ui.vercel.app](https://pucar-ui.vercel.app)
-- **Foundations lab** — the token layer *measured in the browser* (31 contrast pairs, live pass/fail, both themes): [/foundations](https://pucar-ui.vercel.app/foundations)
+- **Component gallery** — every component rendered against the live tokens: [pucar-design-system.vercel.app](https://pucar-design-system.vercel.app)
+- **Foundations lab** — the token layer *measured in the browser* (31 contrast pairs, live pass/fail, both themes): [/foundations](https://pucar-design-system.vercel.app/foundations)
 
 ## Use it in your project
 
 ```bash
 # the theme — tokens, type scale, elevation, full @theme utility mappings
-npx shadcn@latest add https://pucar-ui.vercel.app/r/pucar-theme.json
+npx shadcn@latest add https://pucar-design-system.vercel.app/r/pucar-theme.json
 
 # any component, Pucar-themed (internal deps resolve to this registry)
-npx shadcn@latest add https://pucar-ui.vercel.app/r/button.json
+npx shadcn@latest add https://pucar-design-system.vercel.app/r/button.json
 
 # a whole screen pattern
-npx shadcn@latest add https://pucar-ui.vercel.app/r/case-dashboard.json
+npx shadcn@latest add https://pucar-design-system.vercel.app/r/case-dashboard.json
 ```
 
-AI/agent consumers: [`llms.txt`](https://pucar-ui.vercel.app/llms.txt) is the machine-readable index.
+AI/agent consumers: [`llms.txt`](https://pucar-design-system.vercel.app/llms.txt) is the machine-readable index.
 
 ## Develop it
 

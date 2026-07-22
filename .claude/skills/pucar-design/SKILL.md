@@ -39,4 +39,4 @@ Run screen-craft's §8 review pass literally: ladder-only gaps, one h1, squint t
 
 ## Machine index
 
-`llms.txt` (repo root or `https://pucar-ui.vercel.app/llms.txt`) lists every token and installable component. The live gallery (`/`) and measured token lab (`/foundations`) are the review surfaces.
+`llms.txt` (repo root or `https://pucar-design-system.vercel.app/llms.txt`) lists every token and installable component. The live gallery (`/`) and measured token lab (`/foundations`) are the review surfaces.
